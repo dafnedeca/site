@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dafne Deça — Psicóloga | Análise do Comportamento</title>
+  <meta name="description" content="Psicóloga especializada em Análise do Comportamento. Atendimento online. CRP-12/31909.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #4A7C74;
+      --primary-dark: #2D5C55;
+      --accent: #C4956A;
+      --bg: #F9F5EF;
+      --white: #FFFFFF;
+      --text: #2C3E35;
+      --text-light: #6B7B74;
+      --border: #E5DDD0;
+    }
+    body { font-family: Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav {
+      background: var(--white); padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;
+    }
+    .nav-brand { font-size: 1.1rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+    .nav-crp { font-size: 0.85rem; color: var(--text-light); }
+    .hero { background: var(--primary); color: var(--white); padding: 5rem 2rem; text-align: center; }
+    .hero h1 { font-size: 2.8rem; margin-bottom: 0.5rem; font-weight: normal; }
+    .hero h2 { font-size: 1.2rem; font-weight: normal; opacity: 0.85; margin-bottom: 0.5rem; }
+    .hero .crp { font-size: 0.9rem; opacity: 0.7; margin-bottom: 2rem; }
+    .btn {
+      display: inline-block; background: var(--accent); color: var(--white);
+      padding: 0.9rem 2.2rem; border-radius: 30px; text-decoration: none; font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #b5824f; }
+    section { padding: 4rem 2rem; max-width: 860px; margin: 0 auto; }
+    section h2 { font-size: 1.7rem; color: var(--primary); margin-bottom: 1.5rem; font-weight: normal; }
+    section p { margin-bottom: 1rem; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+    .card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem; border-top: 3px solid var(--primary);
+    }
+    .card h3 { font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; }
+    .card p { font-size: 0.9rem; color: var(--text-light); margin: 0; }
+    .steps { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+    .step { display: flex; gap: 1rem; align-items: flex-start; }
+    .step-num {
+      background: var(--primary); color: white; width: 2rem; height: 2rem;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; flex-shrink: 0;
+    }
+    .step-text strong { display: block; margin-bottom: 0.2rem; }
+    .step-text p { margin: 0; font-size: 0.95rem; }
+    hr.divider { border: none; border-top: 1px solid var(--border); max-width: 860px; margin: 0 auto; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.75rem 1.25rem;
+      text-decoration: none; color: var(--text); font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }
+    .contact-link:hover { border-color: var(--primary); color: var(--primary); }
+    footer {
+      background: var(--primary-dark); color: rgba(255,255,255,0.75);
+      text-align: center; padding: 2rem; font-size: 0.85rem;
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .hero, section { padding: 3rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">Dafne Deça</a>
+  <span class="nav-crp">CRP-12/31909</span>
+</nav>
+
+<div class="hero">
+  <h1>Dafne Deça</h1>
+  <h2>Psicóloga · Analista do Comportamento</h2>
+  <p class="crp">CRP-12/31909 · Atendimento Online</p>
+  <a href="https://wa.me/5547992795755" class="btn">Agendar consulta</a>
+</div>
+
+<section>
+  <h2>Sobre mim</h2>
+  <p>Sou Dafne Deça, psicóloga com formação em Análise do Comportamento (ABA/Behaviorismo Radical). Atuo como pesquisadora e escritora científica, transformando ciência em prática acessível.</p>
+  <p>Meu trabalho é baseado em evidências. Acredito que compreender o comportamento humano é o primeiro passo para uma vida mais saudável e significativa.</p>
+</section>
+
+<hr class="divider">
+
+<section>
+  <h2>Como posso ajudar</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Análise do Comportamento</h3>
+      <p>Abordagem baseada em evidências para compreender e modificar comportamentos de forma ética e eficaz.</p>
+    </div>
+    <div class="card">
+      <h3>Saúde Mental e Bem-estar</h3>
+      <p>Suporte para ansiedade, dificuldades emocionais e desenvolvimento de habilidades de autocuidado.</p>
+    </div>
+    <div class="card">
+      <h3>Diversidade e Inclusão</h3>
+      <p>Atendimento afirmativo para pessoas LGBTQ+, com escuta respeitosa e acolhedora.</p>
+    </div>
+    <div class="card">
+      <h3>Prevenção e Crise</h3>
+      <p>Formação especializada em prevenção do suicídio e manejo de situações de crise.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <h2>Atendimento Online</h2>
+  <p>Todas as sessões são realizadas online, com segurança, privacidade e o mesmo cuidado de uma consulta presencial.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>Primeiro contato</strong>
+        <p>Entre em contato pelo WhatsApp ou Instagram para agendar uma conversa inicial.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>Sessão inicial</strong>
+        <p>Conversa para entender o que você está vivendo e definir os objetivos do acompanhamento.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>Acompanhamento</strong>
+        <p>Sessões semanais por videochamada, em plataforma segura e de sua escolha.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <h2>Contato</h2>
+  <p>Entre em contato para agendar sua consulta ou tirar dúvidas.</p>
+  <div class="contact-links">
+    <a href="https://wa.me/5547992795755" class="contact-link">📱 WhatsApp</a>
+    <a href="https://instagram.com/psico.atualizando" class="contact-link">📷 @psico.atualizando</a>
+    <a href="https://linkedin.com/in/dafne-oliveira-deca-campos" class="contact-link">💼 LinkedIn</a>
+  </div>
+</section>
+
+<footer>
+  <p>Dafne Oliveira Deça Campos · CRP-12/31909</p>
+  <p style="margin-top:0.5rem;">Psicóloga registrada no CRP — 12ª Região (SC)</p>
+</footer>
+
+</body>
+</html>
