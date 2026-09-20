@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Método VIVER — Dafne Deça, Psicóloga</title>
+  <meta name="description" content="Método VIVER: a abordagem integrativa de Dafne Deça que combina Análise do Comportamento com o modelo biopsicossocial para fibromialgia, dor crônica, ansiedade e depressão.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .metod-hero {
+      background: var(--g-hero); padding: 9rem 3rem 3rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .metod-hero::before {
+      content: ''; position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(109,40,217,0.3) 0%, transparent 70%);
+    }
+    .metod-hero::after {
+      content: ''; position: absolute; bottom: -80px; left: -80px;
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, rgba(236,72,153,0.2) 0%, transparent 70%);
+    }
+    .metod-hero-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
+    .metod-logo {
+      display: inline-flex; gap: 0;
+      margin-bottom: 2rem;
+    }
+    .metod-logo-letter {
+      width: 3.5rem; height: 3.5rem; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--f-heading); font-weight: 800; font-size: 1.4rem;
+      color: white; margin: 0 0.25rem;
+    }
+
+    .steps-full { margin-top: 3rem; }
+    .step-full {
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 2.5rem; margin-bottom: 3rem; align-items: start;
+    }
+    .step-full-letter {
+      width: 5rem; height: 5rem; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--f-heading); font-weight: 800; font-size: 2rem;
+      color: white; flex-shrink: 0;
+    }
+    .step-full-content {}
+    .step-full-name {
+      font-family: var(--f-heading); font-weight: 800; font-size: 1.5rem;
+      color: var(--c-dark); margin-bottom: 0.25rem; letter-spacing: -0.02em;
+    }
+    .step-full-verb {
+      font-family: var(--f-heading); font-weight: 600; font-size: 0.8rem;
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .step-full-body { font-size: 1rem; color: var(--c-muted); line-height: 1.8; max-width: 600px; }
+    .step-full-bullets {
+      margin-top: 1rem; padding-left: 0; list-style: none;
+    }
+    .step-full-bullets li {
+      font-size: 0.92rem; color: var(--c-muted); padding: 0.35rem 0;
+      display: flex; gap: 0.6rem; align-items: flex-start;
+    }
+    .step-full-bullets li::before {
+      content: '→'; color: var(--c-pink); font-weight: 700; flex-shrink: 0;
+    }
+    .step-sep {
+      height: 1px; background: var(--c-border); margin-bottom: 3rem;
+    }
+
+    .base-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2rem; margin-top: 2.5rem;
+    }
+    .base-card {
+      background: var(--c-white); border: 1px solid var(--c-border);
+      border-radius: var(--r-md); padding: 2rem;
+    }
+    .base-card h3 {
+      font-family: var(--f-heading); font-weight: 700; font-size: 1.05rem;
+      color: var(--c-dark); margin-bottom: 0.75rem;
+    }
+    .base-card p { font-size: 0.92rem; color: var(--c-muted); line-height: 1.75; }
+
+    .how-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1.5rem; margin-top: 2.5rem;
+    }
+    .how-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--r-md); padding: 1.75rem;
+    }
+    .how-num {
+      font-family: var(--f-heading); font-weight: 800; font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .how-card h4 {
+      font-family: var(--f-heading); font-weight: 700; font-size: 0.95rem;
+      color: var(--c-white); margin-bottom: 0.4rem;
+    }
+    .how-card p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+    @media (max-width: 700px) {
+      .step-full { grid-template-columns: 1fr; gap: 1rem; }
+      .step-full-letter { width: 3.5rem; height: 3.5rem; font-size: 1.5rem; }
+      .base-grid { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Dafne<span>.</span></a>
+  <div class="nav-links">
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="especialidades.html">Especialidades</a>
+    <a href="metodologia.html" class="active">Metodologia</a>
+    <a href="contato.html">Contato</a>
+  </div>
+  <a href="https://wa.me/5547992795755" class="nav-cta">Agendar →</a>
+</nav>
+
+<!-- HEADER -->
+<div class="metod-hero">
+  <div class="metod-hero-inner">
+    <div class="metod-logo">
+      <div class="metod-logo-letter" style="background:var(--g-primary)">V</div>
+      <div class="metod-logo-letter" style="background:linear-gradient(135deg,#7C3AED,#EC4899)">I</div>
+      <div class="metod-logo-letter" style="background:var(--g-cool)">V</div>
+      <div class="metod-logo-letter" style="background:linear-gradient(135deg,#EC4899,#F59E0B)">E</div>
+      <div class="metod-logo-letter" style="background:var(--g-warm)">R</div>
+    </div>
+    <span class="section-tag" style="color:#C4B5FD; display:block; margin-bottom:0.75rem">Metodologia exclusiva</span>
+    <h1 style="font-family:var(--f-heading); font-weight:800; font-size:clamp(2.5rem,5vw,4rem); letter-spacing:-0.03em; color:white; margin-bottom:1rem;">
+      O Método <span style="background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">VIVER</span>
+    </h1>
+    <p style="color:rgba(255,255,255,0.65); font-size:1.1rem; line-height:1.7; max-width:560px; margin:0 auto;">
+      Uma abordagem integrativa que combina <strong style="color:white">Análise do Comportamento</strong> com o <strong style="color:white">modelo biopsicossocial</strong> — porque você não é só um diagnóstico.
+    </p>
+  </div>
+</div>
+
+<div class="wave" style="background:var(--g-hero)">
+  <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none">
+    <path d="M0,60 L0,30 Q360,0 720,30 Q1080,60 1440,30 L1440,60 Z" fill="var(--c-bg)"/>
+  </svg>
+</div>
+
+<!-- BASE TEÓRICA -->
+<section class="section">
+  <div class="section-inner">
+    <span class="section-tag">Fundamentos</span>
+    <h2 class="section-title">Ciência que <em>orienta</em></h2>
+    <p class="section-body">O Método VIVER tem dois pilares teóricos que se complementam. Não escolhi um porque é modismo — escolhi porque é o que funciona para as condições que trato.</p>
+    <div class="base-grid">
+      <div class="base-card" style="border-top:3px solid var(--c-violet)">
+        <h3>🧠 Análise do Comportamento (ABA)</h3>
+        <p>A ABA entende que comportamento — incluindo pensamentos, emoções e respostas físicas — é moldado pelo contexto, histórico de aprendizagem e contingências atuais. Em vez de tratar sintomas isolados, analisa os padrões que os sustentam. É precisa, mensurável e eficaz.</p>
+        <p style="margin-top:0.75rem; font-size:0.85rem; color:var(--c-violet); font-weight:600">Orientação teórica central da Dafne · Formação universitária</p>
+      </div>
+      <div class="base-card" style="border-top:3px solid var(--c-pink)">
+        <h3>🔄 Modelo Biopsicossocial</h3>
+        <p>Condições como fibromialgia, dor crônica e transtornos de humor não são só "físicas" nem só "psicológicas". São biopsicossociais — envolvem biologia, comportamento, contexto social, histórico de vida. Tratar um sem os outros é incompleto. A OMS reconhece isso há décadas.</p>
+        <p style="margin-top:0.75rem; font-size:0.85rem; color:var(--c-pink); font-weight:600">Base do TCC da Dafne · Pesquisa em fibromialgia</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OS 5 PASSOS -->
+<section class="section" style="background:var(--c-surface); padding-top:4rem; padding-bottom:5rem;">
+  <div class="section-inner">
+    <span class="section-tag">Os 5 passos</span>
+    <h2 class="section-title">Como o método <em>funciona</em></h2>
+    <p class="section-body">Cada letra do método VIVER corresponde a uma fase do processo terapêutico. Elas não são estanques — se sobrepõem, se alimentam, evoluem conforme você evolui.</p>
+
+    <div class="steps-full">
+
+      <div class="step-full">
+        <div class="step-full-letter" style="background:var(--g-primary)">V</div>
+        <div class="step-full-content">
+          <div class="step-full-name">Validar</div>
+          <div class="step-full-verb" style="color:var(--c-violet)">Sua experiência é real</div>
+          <p class="step-full-body">Antes de qualquer técnica, há o reconhecimento. Muitas pessoas que chegam até mim já ouviram "não tem nada" ou "é ansiedade". Aqui, não precisamos convencer ninguém. A dor é real. O cansaço é real. O sofrimento é real. Começamos exatamente aí — sem minimizar, sem relativizar, sem pressa.</p>
+          <ul class="step-full-bullets">
+            <li>Escuta ativa sem julgamento</li>
+            <li>Reconhecimento do impacto real das condições crônicas</li>
+            <li>Construção de um espaço seguro para falar o que nunca foi ouvido</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-sep"></div>
+
+      <div class="step-full">
+        <div class="step-full-letter" style="background:linear-gradient(135deg,#7C3AED,#EC4899)">I</div>
+        <div class="step-full-content">
+          <div class="step-full-name">Investigar</div>
+          <div class="step-full-verb" style="color:var(--c-pink)">Entender os padrões</div>
+          <p class="step-full-body">A Análise do Comportamento não trata sintomas — analisa o que os sustenta. Investigamos juntos: quais situações disparam a dor, a ansiedade, a tristeza? Quais comportamentos estão mantendo o sofrimento? O que no contexto de vida pode estar contribuindo? Sem julgamento — com curiosidade científica.</p>
+          <ul class="step-full-bullets">
+            <li>Análise funcional dos comportamentos</li>
+            <li>Mapeamento de padrões de pensamento, emoção e ação</li>
+            <li>Avaliação biopsicossocial: corpo, mente, contexto e história</li>
+            <li>Identificação de reforçadores e punidores no ambiente</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-sep"></div>
+
+      <div class="step-full">
+        <div class="step-full-letter" style="background:var(--g-cool)">V</div>
+        <div class="step-full-content">
+          <div class="step-full-name">Vincular</div>
+          <div class="step-full-verb" style="color:#7C3AED">Aliança que sustenta</div>
+          <p class="step-full-body">A relação terapêutica não é um detalhe — é o mecanismo central de mudança. Vincular significa construir uma relação de confiança genuína, onde você sabe que não vai ser julgado, que suas informações estão protegidas e que estou do seu lado. Esse vínculo é o que torna as próximas etapas possíveis.</p>
+          <ul class="step-full-bullets">
+            <li>Aliança terapêutica sólida, construída sessão a sessão</li>
+            <li>Sigilo profissional absoluto — ética do CFP</li>
+            <li>Comunicação transparente sobre o processo e os objetivos</li>
+            <li>Adaptação do ritmo terapêutico à sua realidade</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-sep"></div>
+
+      <div class="step-full">
+        <div class="step-full-letter" style="background:linear-gradient(135deg,#EC4899,#F59E0B)">E</div>
+        <div class="step-full-content">
+          <div class="step-full-name">Equilibrar</div>
+          <div class="step-full-verb" style="color:#D97706">Intervenção baseada em evidências</div>
+          <p class="step-full-body">Com base no que foi investigado, desenvolvemos intervenções personalizadas. Não existe protocolo único — cada pessoa tem um contexto diferente. Trabalhamos habilidades de regulação emocional, manejo da dor crônica, reestruturação de padrões comportamentais e estratégias para reduzir o sofrimento no dia a dia.</p>
+          <ul class="step-full-bullets">
+            <li>Intervenções baseadas em ABA e no modelo biopsicossocial</li>
+            <li>Manejo comportamental da dor crônica e da fibromialgia</li>
+            <li>Habilidades de regulação emocional para ansiedade e depressão</li>
+            <li>Estratégias para o "fibrofog" e déficits cognitivos</li>
+            <li>Trabalho com autoestima e autoimagem em condições crônicas</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-sep"></div>
+
+      <div class="step-full">
+        <div class="step-full-letter" style="background:var(--g-warm)">R</div>
+        <div class="step-full-content">
+          <div class="step-full-name">Reforçar</div>
+          <div class="step-full-verb" style="color:var(--c-amber)">Autonomia que dura</div>
+          <p class="step-full-body">O objetivo final não é que você precise de mim para sempre — é que você saia da terapia com ferramentas que ficam. Reforçar significa consolidar os ganhos, fortalecer a autonomia, identificar os recursos internos que você tem e talvez nunca tenha reconhecido. A terapia termina; a vida continua — e ela fica melhor.</p>
+          <ul class="step-full-bullets">
+            <li>Consolidação das habilidades desenvolvidas</li>
+            <li>Construção de repertório de autogestão</li>
+            <li>Prevenção de recaídas em condições crônicas</li>
+            <li>Reforço positivo da identidade e da capacidade de funcionamento</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA NA PRÁTICA -->
+<section class="section section-dark">
+  <div class="section-inner">
+    <div style="text-align:center">
+      <span class="section-tag">Na prática</span>
+      <h2 class="section-title">Como é o <em>atendimento</em></h2>
+      <p class="section-body" style="max-width:560px; margin:0 auto;">Simples, seguro, no seu tempo.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num" style="color:var(--c-violet)">01</div>
+        <h4>Primeiro contato</h4>
+        <p>Você manda uma mensagem — sem precisar explicar tudo logo. Agendamos uma sessão inicial. Sem pressão, sem formulário extenso.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num" style="color:var(--c-pink)">02</div>
+        <h4>Sessão inicial</h4>
+        <p>50 minutos de conversa para entender o que você está vivendo. Sem julgamento. Sem agenda prévia sobre "o que devo sentir". Você fala, eu escuto e analiso.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num" style="color:var(--c-emerald)">03</div>
+        <h4>Plano terapêutico</h4>
+        <p>Desenvolvemos juntos os objetivos do acompanhamento. O que você quer mudar? O que quer parar de sentir? O que quer conseguir fazer?</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num" style="color:var(--c-amber)">04</div>
+        <h4>Acompanhamento semanal</h4>
+        <p>Sessões semanais por videochamada. Na plataforma que preferir (Google Meet, Zoom, Teams). Privacidade garantida.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num" style="color:#C4B5FD">05</div>
+        <h4>Reavaliação contínua</h4>
+        <p>O processo evolui. Reavaliamos periodicamente: o que mudou, o que precisa de ajuste, onde você está em relação aos seus objetivos.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num" style="color:#FDE68A">06</div>
+        <h4>Alta e continuidade</h4>
+        <p>Quando os objetivos foram alcançados, planejamos a alta — com recursos para você seguir. A autonomia é o objetivo, não a dependência.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="wave" style="background:var(--c-dark)">
+  <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none">
+    <path d="M0,0 L0,30 Q360,60 720,30 Q1080,0 1440,30 L1440,0 Z" fill="var(--c-bg)"/>
+  </svg>
+</div>
+<section class="section" style="text-align:center; padding-top:3rem;">
+  <div class="section-inner">
+    <h2 class="section-title">Quer experimentar o <em>Método VIVER</em>?</h2>
+    <p class="section-body" style="max-width:500px; margin:0 auto 2rem;">Agende a sessão inicial. É o primeiro passo — e o mais importante.</p>
+    <a href="https://wa.me/5547992795755" class="btn btn-primary">💬 Agendar agora</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <span class="footer-brand">Dafne<span>.</span> Deça</span>
+      <p class="footer-desc">Psicóloga especializada em Análise do Comportamento. Método VIVER para fibromialgia, dor crônica, depressão e ansiedade.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Páginas</h4>
+      <a href="sobre.html">Sobre mim</a>
+      <a href="especialidades.html">Especialidades</a>
+      <a href="metodologia.html">Metodologia</a>
+      <a href="contato.html">Contato</a>
+    </div>
+    <div class="footer-col">
+      <h4>Método VIVER</h4>
+      <a href="metodologia.html">Validar</a>
+      <a href="metodologia.html">Investigar</a>
+      <a href="metodologia.html">Vincular</a>
+      <a href="metodologia.html">Equilibrar</a>
+      <a href="metodologia.html">Reforçar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5547992795755">WhatsApp</a>
+      <a href="https://instagram.com/psico.atualizando">Instagram</a>
+      <a href="https://linkedin.com/in/dafne-oliveira-deca-campos">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-crp">Dafne Oliveira Deça Campos · CRP-12/31909 · Psicóloga registrada no CRP — 12ª Região (SC)</span>
+    <span class="footer-crp">© 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

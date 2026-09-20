@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Especialidades — Dafne Deça, Psicóloga</title>
+  <meta name="description" content="Fibromialgia, dor crônica, depressão, ansiedade e diversidade sexual: especialidades de Dafne Deça com base na Análise do Comportamento e no modelo biopsicossocial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .spec-nav {
+      background: var(--c-surface); border-bottom: 1px solid var(--c-border);
+      position: sticky; top: 72px; z-index: 90; overflow-x: auto;
+    }
+    .spec-nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 3rem;
+      display: flex; gap: 0;
+    }
+    .spec-nav-link {
+      padding: 1rem 1.5rem; font-family: var(--f-heading); font-weight: 600;
+      font-size: 0.88rem; color: var(--c-muted); text-decoration: none;
+      border-bottom: 2px solid transparent; white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .spec-nav-link:hover { color: var(--c-violet); }
+    .spec-nav-link.active { color: var(--c-violet); border-bottom-color: var(--c-violet); }
+
+    .spec-section { scroll-margin-top: 120px; }
+
+    .symptom-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+      gap: 0.75rem; margin: 1.5rem 0;
+    }
+    .symptom-card {
+      background: var(--c-white); border: 1px solid var(--c-border);
+      border-radius: var(--r-md); padding: 1rem; text-align: center;
+      font-family: var(--f-heading); font-size: 0.88rem; font-weight: 600;
+      color: var(--c-text);
+    }
+    .symptom-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
+
+    .sci-box {
+      background: rgba(109,40,217,0.05); border: 1px solid rgba(109,40,217,0.15);
+      border-radius: var(--r-md); padding: 1.75rem; margin: 1.75rem 0;
+    }
+    .sci-box-title {
+      font-family: var(--f-heading); font-weight: 700; font-size: 0.78rem;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-violet);
+      margin-bottom: 1rem;
+    }
+    .sci-box p { font-size: 0.95rem; color: var(--c-muted); line-height: 1.8; }
+
+    .spec-hero-two {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+    }
+    .spec-hero-two-text h2 {
+      font-family: var(--f-heading); font-weight: 800; font-size: clamp(1.8rem,3vw,2.5rem);
+      letter-spacing: -0.025em; color: var(--c-dark); margin-bottom: 1rem;
+    }
+    .spec-hero-two-text h2 em {
+      font-style: normal; background: var(--g-cool);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .spec-hero-two-text p { color: var(--c-muted); line-height: 1.8; margin-bottom: 1rem; }
+
+    .stat-row {
+      display: flex; gap: 1.5rem; flex-wrap: wrap; margin: 1.5rem 0;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: var(--f-heading); font-weight: 800; font-size: 2rem;
+      letter-spacing: -0.04em; display: block;
+    }
+    .stat-label { font-size: 0.78rem; color: var(--c-muted); font-family: var(--f-heading); }
+
+    .quote-pull {
+      border-left: 3px solid var(--c-pink); padding-left: 1.5rem;
+      margin: 2rem 0; font-style: italic; font-size: 1.05rem;
+      color: var(--c-text); line-height: 1.7;
+    }
+
+    .approach-list { margin: 1.5rem 0; }
+    .approach-item {
+      display: flex; gap: 1rem; padding: 1rem 0;
+      border-bottom: 1px solid var(--c-border);
+    }
+    .approach-item:last-child { border-bottom: none; }
+    .approach-item-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      flex-shrink: 0; margin-top: 0.55rem;
+    }
+    .approach-item-content {}
+    .approach-item-content strong {
+      font-family: var(--f-heading); font-weight: 700; font-size: 0.95rem;
+      color: var(--c-dark); display: block; margin-bottom: 0.2rem;
+    }
+    .approach-item-content span { font-size: 0.9rem; color: var(--c-muted); }
+
+    .visual-card {
+      background: var(--g-hero); border-radius: var(--r-lg);
+      padding: 2.5rem; position: relative; overflow: hidden;
+    }
+    .visual-card::before {
+      content: ''; position: absolute; top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(236,72,153,0.3) 0%, transparent 70%);
+    }
+    .visual-card-icon { font-size: 3rem; margin-bottom: 1rem; position: relative; z-index: 1; }
+    .visual-card h3 {
+      font-family: var(--f-heading); font-weight: 800; font-size: 1.4rem;
+      color: white; margin-bottom: 0.5rem; position: relative; z-index: 1;
+    }
+    .visual-card p { color: rgba(255,255,255,0.65); font-size: 0.92rem; line-height: 1.7; position: relative; z-index: 1; }
+
+    @media (max-width: 760px) {
+      .spec-hero-two { grid-template-columns: 1fr; }
+      .spec-nav-inner { padding: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Dafne<span>.</span></a>
+  <div class="nav-links">
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="especialidades.html" class="active">Especialidades</a>
+    <a href="metodologia.html">Metodologia</a>
+    <a href="contato.html">Contato</a>
+  </div>
+  <a href="https://wa.me/5547992795755" class="nav-cta">Agendar →</a>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <span class="section-tag" style="color:#C4B5FD">O que eu trato</span>
+  <h1>Especialidades que <em style="font-style:normal; background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">transformam</em></h1>
+  <p>Não trato "problemas". Trato pessoas que têm nome, história e uma condição real que merece abordagem científica e humana.</p>
+</div>
+
+<div class="wave" style="background:var(--g-hero)">
+  <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none">
+    <path d="M0,60 L0,30 Q360,0 720,30 Q1080,60 1440,30 L1440,60 Z" fill="var(--c-bg)"/>
+  </svg>
+</div>
+
+<!-- SUB NAV -->
+<div class="spec-nav">
+  <div class="spec-nav-inner">
+    <a href="#fibromialgia" class="spec-nav-link active">Fibromialgia</a>
+    <a href="#dor-cronica" class="spec-nav-link">Dor Crônica</a>
+    <a href="#depressao" class="spec-nav-link">Depressão</a>
+    <a href="#ansiedade" class="spec-nav-link">Ansiedade</a>
+    <a href="#lgbtq" class="spec-nav-link">Diversidade Sexual</a>
+  </div>
+</div>
+
+<!-- ──────────────────────── FIBROMIALGIA ──────────────────────── -->
+<section id="fibromialgia" class="section spec-section">
+  <div class="section-inner">
+    <div class="spec-hero-two">
+      <div class="spec-hero-two-text">
+        <span class="section-tag">Especialidade central</span>
+        <h2>Fibromialgia:<br><em>dor que é real, mesmo quando ninguém acredita</em></h2>
+        <p>Se você chegou até aqui carregando a fibromialgia, provavelmente já ouviu "não tem nada" em exames, já duvidou da própria dor e já se perguntou se é "só estresse". Não é.</p>
+        <p>A fibromialgia é uma condição reconhecida pela OMS. A dor difusa, o cansaço que não passa, o sono que não restaura, a névoa mental — tudo isso tem explicação neurobiológica. E tem como trabalhar.</p>
+        <p><strong>Por que eu?</strong> Porque eu pesquisei a fibromialgia no meu TCC. E porque eu conheço de dentro — não só da ciência.</p>
+      </div>
+      <div class="visual-card">
+        <div class="visual-card-icon">🧩</div>
+        <h3>O que a ciência diz</h3>
+        <p>A fibromialgia envolve <strong style="color:white">sensibilização central</strong> — o sistema nervoso central amplifica sinais de dor sem lesão tecidual identificável. O resultado: estímulos leves viram dor intensa (alodínia) e dor já presente é amplificada (hiperalgesia).</p>
+        <div class="stat-row" style="margin-top:1.5rem; justify-content:center;">
+          <div class="stat-item">
+            <span class="stat-num" style="color:#C4B5FD">3×</span>
+            <span class="stat-label" style="color:rgba(255,255,255,0.5)">+ substância P</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" style="color:#FDE68A">55%</span>
+            <span class="stat-label" style="color:rgba(255,255,255,0.5)">têm ansiedade</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" style="color:#A7F3D0">49%</span>
+            <span class="stat-label" style="color:rgba(255,255,255,0.5)">têm depressão</span>
+          </div>
+        </div>
+        <p style="margin-top:1rem; font-size:0.8rem; opacity:0.5">Fontes: Gálvez-Sánchez et al., Avni et al. — referências da pesquisa da Dafne</p>
+      </div>
+    </div>
+
+    <div class="symptom-grid" style="margin-top:3rem">
+      <div class="symptom-card"><div class="symptom-icon">😴</div>Sono não reparador</div>
+      <div class="symptom-card"><div class="symptom-icon">🔥</div>Dor difusa</div>
+      <div class="symptom-card"><div class="symptom-icon">🌫️</div>Fibrofog (névoa mental)</div>
+      <div class="symptom-card"><div class="symptom-icon">⚡</div>Fadiga intensa</div>
+      <div class="symptom-card"><div class="symptom-icon">💤</div>Rigidez matinal</div>
+      <div class="symptom-card"><div class="symptom-icon">😰</div>Sofrimento psicológico</div>
+      <div class="symptom-card"><div class="symptom-icon">🤔</div>Dificuldade de concentração</div>
+      <div class="symptom-card"><div class="symptom-icon">🤧</div>Cefaleia frequente</div>
+    </div>
+
+    <div class="sci-box">
+      <div class="sci-box-title">🔬 Como trabalho com fibromialgia</div>
+      <div class="approach-list">
+        <div class="approach-item">
+          <div class="approach-item-dot" style="background:var(--c-violet)"></div>
+          <div class="approach-item-content">
+            <strong>Psicoeducação sobre a condição</strong>
+            <span>Entender o mecanismo da sensibilização central muda a relação com a dor. Quando você sabe o que está acontecendo no seu sistema nervoso, a dor deixa de ser misteriosa e assustadora.</span>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="approach-item-dot" style="background:var(--c-pink)"></div>
+          <div class="approach-item-content">
+            <strong>Análise funcional dos comportamentos de dor</strong>
+            <span>Quais situações agravam a dor? Quais comportamentos a mantêm? Identificamos os padrões para poder modificá-los.</span>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="approach-item-dot" style="background:var(--c-emerald)"></div>
+          <div class="approach-item-content">
+            <strong>Estratégias de enfrentamento ativo</strong>
+            <span>Ferramentas práticas para dias de crise, para o "fibrofog", para o cansaço que não desaparece — sem minimizar, sem forçar.</span>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="approach-item-dot" style="background:var(--c-amber)"></div>
+          <div class="approach-item-content">
+            <strong>Trabalho com as comorbidades</strong>
+            <span>Fibromialgia raramente vem sozinha. Depressão e ansiedade coexistem em mais da metade dos casos — e precisam de atenção conjunta.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── DOR CRÔNICA ──────────────────────── -->
+<section id="dor-cronica" class="section spec-section" style="background:var(--c-surface)">
+  <div class="section-inner">
+    <span class="section-tag">Especialidade</span>
+    <h2 class="section-title">Dor Crônica:<br><em>quando o corpo não para de falar</em></h2>
+
+    <div class="spec-hero-two">
+      <div>
+        <p style="color:var(--c-muted); line-height:1.8; margin-bottom:1rem">Dor crônica é qualquer dor que persiste por mais de 3 meses. Não é exagero, não é fraqueza, não é "psicológico" no sentido de "inventado". É uma condição reconhecida, com mecanismos neurobiológicos próprios.</p>
+        <p style="color:var(--c-muted); line-height:1.8; margin-bottom:1rem">O impacto vai muito além do físico: afeta o humor, o sono, o trabalho, os relacionamentos, a autoestima. Muitas pessoas chegam ao meu consultório com anos de tratamentos físicos e sem nenhum suporte psicológico — como se a dor física não tivesse dimensão emocional. Tem, e ela é enorme.</p>
+
+        <blockquote class="quote-pull">
+          "Dor crônica não é só sobre o corpo. É sobre quem você se torna depois de anos vivendo com ela."
+        </blockquote>
+
+        <p style="color:var(--c-muted); line-height:1.8">O trabalho psicológico não substitui o tratamento médico — ele completa. Juntos, trabalhamos o sofrimento que a dor carrega, as limitações que ela impõe e as ferramentas para viver melhor dentro dessa realidade.</p>
+      </div>
+      <div>
+        <div class="approach-list">
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-violet)"></div>
+            <div class="approach-item-content">
+              <strong>Aceitação sem resignação</strong>
+              <span>Aceitar a dor crônica não é desistir de melhorar — é parar de gastar energia lutando contra o que é real para investir no que pode mudar.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-pink)"></div>
+            <div class="approach-item-content">
+              <strong>Luto das perdas funcionais</strong>
+              <span>Dor crônica traz perdas reais — de atividades, papéis, identidade. Esse luto precisa ser processado, não ignorado.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-emerald)"></div>
+            <div class="approach-item-content">
+              <strong>Manejo do ciclo dor–inatividade–piora</strong>
+              <span>Dor leva ao repouso, repouso leva à piora física e emocional. Quebramos esse ciclo com estratégias graduais e individualizadas.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-amber)"></div>
+            <div class="approach-item-content">
+              <strong>Qualidade de vida como meta</strong>
+              <span>Não prometemos eliminar a dor — prometemos trabalhar para que ela ocupe menos espaço na sua vida.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── DEPRESSÃO ──────────────────────── -->
+<section id="depressao" class="section spec-section">
+  <div class="section-inner">
+    <span class="section-tag">Especialidade</span>
+    <h2 class="section-title">Depressão:<br><em>quando o vazio pesa mais que a tristeza</em></h2>
+
+    <div class="spec-hero-two">
+      <div class="visual-card" style="background:linear-gradient(160deg,#1A0A3B,#0D0721)">
+        <div class="visual-card-icon">🌒</div>
+        <h3>O que é, de verdade</h3>
+        <p style="margin-bottom:1rem">Depressão não é frescura. Não é tristeza passageira. Não é "falta de força de vontade". É uma condição que altera o funcionamento do cérebro — a forma como você sente prazer, como você processa emoções, como você enxerga o futuro.</p>
+        <p>A psicologia baseada em evidências tem intervenções altamente eficazes para depressão. Você não precisa viver assim.</p>
+      </div>
+      <div>
+        <p style="color:var(--c-muted); line-height:1.8; margin-bottom:1rem">A depressão se manifesta de formas diferentes em cada pessoa — às vezes não é nem tristeza, é ausência. Ausência de prazer, de motivação, de sentido. É acordar cansado mesmo depois de dormir. É fazer esforço enorme para coisas que antes eram automáticas.</p>
+        <p style="color:var(--c-muted); line-height:1.8; margin-bottom:1.5rem">Na Análise do Comportamento, trabalhamos os padrões comportamentais que mantêm a depressão — e construímos, gradualmente, contextos que a enfraquecem.</p>
+
+        <div class="symptom-grid" style="margin-top:1rem">
+          <div class="symptom-card"><div class="symptom-icon">💤</div>Fadiga constante</div>
+          <div class="symptom-card"><div class="symptom-icon">🚫</div>Perda de prazer</div>
+          <div class="symptom-card"><div class="symptom-icon">🌑</div>Humor persistentemente baixo</div>
+          <div class="symptom-card"><div class="symptom-icon">🧠</div>Dificuldade de concentrar</div>
+          <div class="symptom-card"><div class="symptom-icon">🔄</div>Isolamento social</div>
+          <div class="symptom-card"><div class="symptom-icon">❓</div>Sensação de vazio</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sci-box" style="margin-top:2.5rem">
+      <div class="sci-box-title">🧠 Abordagem na Análise do Comportamento</div>
+      <p>Na ABA, a depressão é entendida como um padrão de comportamento moldado pelo contexto — especialmente pela redução do contato com reforçadores positivos. O tratamento envolve <strong>ativação comportamental</strong> (gradual, sem pressão), identificação e modificação de padrões que mantêm o sofrimento, e construção de um repertório de vida que ofereça mais reforço positivo natural. É estruturado, mensurável e adaptado à sua realidade.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── ANSIEDADE ──────────────────────── -->
+<section id="ansiedade" class="section spec-section" style="background:var(--c-surface)">
+  <div class="section-inner">
+    <span class="section-tag">Especialidade</span>
+    <h2 class="section-title">Ansiedade:<br><em>quando o alarme não desliga</em></h2>
+
+    <div class="spec-hero-two">
+      <div>
+        <p style="color:var(--c-muted); line-height:1.8; margin-bottom:1rem">A ansiedade é um alarme biológico — no nível certo, ela é útil. Mas quando esse alarme dispara o tempo todo, para qualquer coisa, sem motivo aparente, ela se torna uma prisão. Você sabe que "não tem nada" — e mesmo assim o coração acelera, a cabeça não para, o corpo tenso não relaxa.</p>
+        <p style="color:var(--c-muted); line-height:1.8; margin-bottom:1rem">A ansiedade tem origem em padrões aprendidos — de esquiva, de ruminação, de antecipação de ameaças. Isso significa que ela pode ser desaprendida. Não da noite pro dia, mas com processo estruturado.</p>
+
+        <blockquote class="quote-pull">
+          "Ansiedade não é fraqueza. É um sistema nervoso que aprendeu a se proteger demais — e esqueceu como relaxar."
+        </blockquote>
+      </div>
+      <div>
+        <div class="approach-list">
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-violet)"></div>
+            <div class="approach-item-content">
+              <strong>Análise dos padrões de esquiva</strong>
+              <span>A esquiva é o que mantém a ansiedade. Identificamos o que você evita e construímos um plano gradual de exposição.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-pink)"></div>
+            <div class="approach-item-content">
+              <strong>Regulação emocional</strong>
+              <span>Habilidades concretas para modular a resposta ansiosa — não para ignorar a emoção, mas para não ser dominado por ela.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-emerald)"></div>
+            <div class="approach-item-content">
+              <strong>Manejo da ruminação</strong>
+              <span>O loop mental que não para tem padrões identificáveis. Trabalhamos estratégias para interrompê-lo e redirecionar.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-amber)"></div>
+            <div class="approach-item-content">
+              <strong>Contextos de reforço</strong>
+              <span>Construímos gradualmente um cotidiano que reforce calma, presença e funcionamento — não só ausência de ansiedade.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── LGBTQ+ ──────────────────────── -->
+<section id="lgbtq" class="section spec-section">
+  <div class="section-inner">
+    <span class="section-tag">Especialidade · Espaço seguro</span>
+    <h2 class="section-title">Diversidade Sexual:<br><em>um espaço onde você é inteiro</em></h2>
+
+    <div class="spec-hero-two">
+      <div class="visual-card">
+        <div class="visual-card-icon">🌈</div>
+        <h3>Psicologia afirmativa LGBTQ+</h3>
+        <p style="margin-bottom:1rem">Aqui não tem "cura". Orientação sexual e identidade de gênero não são transtornos — o CFP é claro sobre isso desde 1999, e a OMS desde 1990. Se você já passou por psicólogo que sugeriu o contrário, saiba que isso é antiético e você pode denunciar.</p>
+        <p>O que ofereço é um espaço psicológico afirmativo — onde sua identidade é reconhecida, respeitada e integrada ao trabalho terapêutico.</p>
+      </div>
+      <div>
+        <p style="color:var(--c-muted); line-height:1.8; margin-bottom:1rem">Pessoas LGBTQ+ têm taxas significativamente mais altas de ansiedade, depressão e ideação suicida — não porque há "algo errado" com quem elas são, mas porque vivem em um contexto social que frequentemente as rejeita, invisibiliza ou patologiza.</p>
+        <p style="color:var(--c-muted); line-height:1.8; margin-bottom:1.5rem">O sofrimento tem origem no <strong>estresse de minoria</strong> — e a terapia pode ser o espaço para processar isso com alguém que entende, que não vai julgar e que vai trabalhar a favor de quem você é.</p>
+
+        <div class="approach-list">
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-violet)"></div>
+            <div class="approach-item-content">
+              <strong>Processo de identidade</strong>
+              <span>Exploração e afirmação da identidade sexual e de gênero, no seu tempo, sem pressão.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-pink)"></div>
+            <div class="approach-item-content">
+              <strong>Saúde mental LGBTQ+</strong>
+              <span>Manejo da ansiedade, depressão e sofrimento relacionados ao estresse de minoria, rejeição familiar e discriminação.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-emerald)"></div>
+            <div class="approach-item-content">
+              <strong>Coming out e família</strong>
+              <span>Preparação e suporte para processos de revelação, quando e se você quiser.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section section-dark" style="text-align:center">
+  <div class="section-inner">
+    <span class="section-tag">Próximo passo</span>
+    <h2 class="section-title">Reconheceu algo <em>nessas páginas</em>?</h2>
+    <p class="section-body" style="max-width:500px; margin:0 auto 2rem">Se uma dessas condições faz parte da sua vida, a conversa com a pessoa certa pode mudar tudo. Dá pra começar com uma mensagem.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap">
+      <a href="https://wa.me/5547992795755" class="btn btn-primary">💬 Falar com a Dafne</a>
+      <a href="metodologia.html" class="btn btn-outline">Ver o Método VIVER →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <span class="footer-brand">Dafne<span>.</span> Deça</span>
+      <p class="footer-desc">Psicóloga especializada em Análise do Comportamento. Fibromialgia, dor crônica, depressão, ansiedade e diversidade sexual.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Páginas</h4>
+      <a href="sobre.html">Sobre mim</a>
+      <a href="especialidades.html">Especialidades</a>
+      <a href="metodologia.html">Metodologia</a>
+      <a href="contato.html">Contato</a>
+    </div>
+    <div class="footer-col">
+      <h4>Especialidades</h4>
+      <a href="#fibromialgia">Fibromialgia</a>
+      <a href="#dor-cronica">Dor Crônica</a>
+      <a href="#depressao">Depressão</a>
+      <a href="#ansiedade">Ansiedade</a>
+      <a href="#lgbtq">Diversidade Sexual</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5547992795755">WhatsApp</a>
+      <a href="https://instagram.com/psico.atualizando">Instagram</a>
+      <a href="https://linkedin.com/in/dafne-oliveira-deca-campos">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-crp">Dafne Oliveira Deça Campos · CRP-12/31909 · Psicóloga registrada no CRP — 12ª Região (SC)</span>
+    <span class="footer-crp">© 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

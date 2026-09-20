@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato — Dafne Deça, Psicóloga</title>
+  <meta name="description" content="Agende sua consulta com Dafne Deça, psicóloga especializada em fibromialgia, dor crônica, ansiedade e depressão. Atendimento online para todo o Brasil.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.2fr;
+      gap: 4rem; align-items: start; margin-top: 3rem;
+    }
+    .contact-left {}
+    .contact-card {
+      background: var(--c-white); border: 1px solid var(--c-border);
+      border-radius: var(--r-lg); padding: 2rem; margin-bottom: 1.25rem;
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      transition: box-shadow 0.2s, transform 0.2s; text-decoration: none;
+    }
+    .contact-card:hover { box-shadow: var(--s-md); transform: translateY(-2px); }
+    .contact-card-icon {
+      width: 3rem; height: 3rem; border-radius: var(--r-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+    .contact-card-content {}
+    .contact-card-title {
+      font-family: var(--f-heading); font-weight: 700; font-size: 1rem;
+      color: var(--c-dark); margin-bottom: 0.2rem;
+    }
+    .contact-card-sub { font-size: 0.9rem; color: var(--c-muted); }
+    .contact-card-value {
+      font-family: var(--f-heading); font-weight: 600; font-size: 0.95rem;
+      margin-top: 0.25rem; color: var(--c-violet);
+    }
+
+    .form-box {
+      background: var(--c-white); border: 1px solid var(--c-border);
+      border-radius: var(--r-lg); padding: 2.5rem;
+    }
+    .form-box h3 {
+      font-family: var(--f-heading); font-weight: 800; font-size: 1.3rem;
+      color: var(--c-dark); margin-bottom: 0.5rem; letter-spacing: -0.02em;
+    }
+    .form-box p { font-size: 0.9rem; color: var(--c-muted); margin-bottom: 1.75rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block; font-family: var(--f-heading); font-weight: 600;
+      font-size: 0.85rem; color: var(--c-dark); margin-bottom: 0.5rem;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 0.85rem 1rem;
+      border: 1.5px solid var(--c-border); border-radius: var(--r-md);
+      font-family: var(--f-body); font-size: 0.95rem; color: var(--c-text);
+      background: var(--c-bg); outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--c-violet); box-shadow: 0 0 0 3px rgba(109,40,217,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-submit {
+      width: 100%; padding: 1rem;
+      background: var(--g-warm); color: var(--c-white);
+      border: none; border-radius: var(--r-xl);
+      font-family: var(--f-heading); font-weight: 700; font-size: 1rem;
+      cursor: pointer; transition: opacity 0.2s, transform 0.2s;
+      box-shadow: 0 4px 20px rgba(236,72,153,0.35);
+    }
+    .form-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+    .form-note {
+      font-size: 0.8rem; color: var(--c-muted); text-align: center;
+      margin-top: 0.75rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--c-border); padding: 1.5rem 0;
+    }
+    .faq-q {
+      font-family: var(--f-heading); font-weight: 700; font-size: 1rem;
+      color: var(--c-dark); margin-bottom: 0.5rem;
+    }
+    .faq-a { font-size: 0.95rem; color: var(--c-muted); line-height: 1.75; }
+
+    @media (max-width: 760px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Dafne<span>.</span></a>
+  <div class="nav-links">
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="especialidades.html">Especialidades</a>
+    <a href="metodologia.html">Metodologia</a>
+    <a href="contato.html" class="active">Contato</a>
+  </div>
+  <a href="https://wa.me/5547992795755" class="nav-cta">Agendar →</a>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <span class="section-tag" style="color:#C4B5FD">Vamos conversar</span>
+  <h1>Agende sua <em style="font-style:normal; background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">consulta</em></h1>
+  <p>O primeiro passo é o mais difícil. Depois disso, caminhamos juntos.</p>
+</div>
+
+<div class="wave" style="background:var(--g-hero)">
+  <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none">
+    <path d="M0,60 L0,30 Q360,0 720,30 Q1080,60 1440,30 L1440,60 Z" fill="var(--c-bg)"/>
+  </svg>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="section">
+  <div class="section-inner">
+    <div class="contact-grid">
+
+      <!-- LEFT: CANAIS -->
+      <div class="contact-left">
+        <span class="section-tag">Canais de contato</span>
+        <h2 class="section-title" style="font-size:clamp(1.6rem,2.5vw,2.2rem); margin-bottom:2rem">Escolha <em>como prefere</em></h2>
+
+        <a href="https://wa.me/5547992795755" class="contact-card" target="_blank">
+          <div class="contact-card-icon" style="background:rgba(37,211,102,0.1); color:#25D366">💬</div>
+          <div class="contact-card-content">
+            <div class="contact-card-title">WhatsApp</div>
+            <div class="contact-card-sub">Resposta mais rápida. Direto ao assunto.</div>
+            <div class="contact-card-value">+55 (47) 99279-5755</div>
+          </div>
+        </a>
+
+        <a href="https://instagram.com/psico.atualizando" class="contact-card" target="_blank">
+          <div class="contact-card-icon" style="background:rgba(236,72,153,0.1); color:var(--c-pink)">📸</div>
+          <div class="contact-card-content">
+            <div class="contact-card-title">Instagram</div>
+            <div class="contact-card-sub">Conteúdo diário. DM aberto.</div>
+            <div class="contact-card-value">@psico.atualizando</div>
+          </div>
+        </a>
+
+        <a href="https://linkedin.com/in/dafne-oliveira-deca-campos" class="contact-card" target="_blank">
+          <div class="contact-card-icon" style="background:rgba(10,102,194,0.1); color:#0A66C2">💼</div>
+          <div class="contact-card-content">
+            <div class="contact-card-title">LinkedIn</div>
+            <div class="contact-card-sub">Parceria profissional, acadêmica ou de pesquisa.</div>
+            <div class="contact-card-value">Dafne Oliveira Deça Campos</div>
+          </div>
+        </a>
+
+        <div class="contact-card" style="cursor:default; background:var(--c-surface)">
+          <div class="contact-card-icon" style="background:rgba(109,40,217,0.1); color:var(--c-violet)">📍</div>
+          <div class="contact-card-content">
+            <div class="contact-card-title">Atendimento online</div>
+            <div class="contact-card-sub">Para todo o Brasil, via videochamada. Joinville, SC.</div>
+            <div class="contact-card-value">CRP-12/31909</div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem; padding:1.5rem; background:rgba(109,40,217,0.05); border:1px solid rgba(109,40,217,0.15); border-radius:var(--r-md)">
+          <div style="font-family:var(--f-heading); font-weight:700; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-violet); margin-bottom:0.5rem">Horário de retorno</div>
+          <p style="font-size:0.9rem; color:var(--c-muted); line-height:1.7">Segunda a sexta, horário comercial. Costumo responder no mesmo dia. Fins de semana podem ter demora.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORMULÁRIO -->
+      <div>
+        <div class="form-box">
+          <h3>Me conta um pouquinho</h3>
+          <p>Não precisa explicar tudo agora — só o suficiente pra eu entender como posso ajudar.</p>
+
+          <form action="https://wa.me/5547992795755" id="contact-form">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Como prefere ser chamado(a)?">
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com">
+            </div>
+            <div class="form-group">
+              <label for="whatsapp">WhatsApp (opcional)</label>
+              <input type="tel" id="whatsapp" name="whatsapp" placeholder="(xx) 9xxxx-xxxx">
+            </div>
+            <div class="form-group">
+              <label for="motivo">O que te trouxe até aqui?</label>
+              <select id="motivo" name="motivo">
+                <option value="">Selecione...</option>
+                <option>Fibromialgia / dor crônica</option>
+                <option>Depressão</option>
+                <option>Ansiedade</option>
+                <option>Diversidade sexual / identidade de gênero</option>
+                <option>Mais de um dos acima</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Quer contar algo mais? (opcional)</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Fique à vontade. Isso fica só entre nós."></textarea>
+            </div>
+
+            <button type="button" class="form-submit" onclick="enviarWhatsApp()">
+              💬 Enviar pelo WhatsApp
+            </button>
+            <p class="form-note">Suas informações são tratadas com sigilo total. CRP-12/31909.</p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--c-surface); padding-top:4rem; padding-bottom:5rem">
+  <div class="section-inner" style="max-width:700px">
+    <span class="section-tag">Dúvidas frequentes</span>
+    <h2 class="section-title">Antes de <em>falar comigo</em></h2>
+
+    <div class="faq-item">
+      <div class="faq-q">Atende presencialmente ou só online?</div>
+      <div class="faq-a">Por enquanto, atendimento <strong>100% online</strong>, por videochamada. Você pode escolher a plataforma que preferir — Google Meet, Zoom ou Teams. Para quem tem fibromialgia e dor crônica, o online também tem a vantagem de não exigir deslocamento nos dias difíceis.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Quanto tempo dura uma sessão?</div>
+      <div class="faq-a">50 minutos. É o padrão da prática clínica em psicologia — tempo suficiente para aprofundar sem esgotar.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Com que frequência são as sessões?</div>
+      <div class="faq-a">Geralmente semanal. Em momentos de maior demanda (crises, processo intenso), pode ser duas vezes por semana. A frequência é definida juntos, de acordo com seu ritmo e objetivos.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Como funciona a primeira sessão?</div>
+      <div class="faq-a">É uma sessão de escuta e avaliação. Você conta o que quiser sobre o que está vivendo, e eu faço perguntas para entender melhor o contexto. Não precisa chegar com tudo organizado — pode ser o caos mesmo. É a partir daí que trabalhamos.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Você atende plano de saúde?</div>
+      <div class="faq-a">Ainda não. Atendimento particular por enquanto. Mas posso emitir recibo para reembolso, caso seu plano ofereça essa possibilidade — entre em contato para verificar.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Você atende para todo o Brasil?</div>
+      <div class="faq-a">Sim! Sendo online, atendo qualquer pessoa em território nacional registrada no CFP. Minha formação é pela 12ª Região (SC), CRP-12/31909.</div>
+    </div>
+
+    <div class="faq-item" style="border-bottom:none">
+      <div class="faq-q">E se eu não me identificar com nenhuma das especialidades listadas?</div>
+      <div class="faq-a">Entre em contato mesmo assim. Talvez o que você está vivendo se encaixa em algo que atendo, só não está listado explicitamente. E se não for o caso, serei honesta sobre isso e, se possível, te direciono para alguém que pode ajudar melhor.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section section-dark" style="text-align:center; padding:5rem 3rem">
+  <div class="section-inner">
+    <h2 class="section-title">Ainda em dúvida? <em>Normal.</em></h2>
+    <p class="section-body" style="max-width:500px; margin:0 auto 2rem">A dúvida de se isso vai funcionar, se vale a pena, se você vai conseguir — é parte do processo. Você não precisa ter certeza pra começar. Só precisa dar um passo.</p>
+    <a href="https://wa.me/5547992795755" class="btn btn-primary" style="font-size:1.05rem; padding:1.1rem 2.5rem">💬 Esse é o passo</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <span class="footer-brand">Dafne<span>.</span> Deça</span>
+      <p class="footer-desc">Psicóloga especializada em Análise do Comportamento. Atendimento online para todo o Brasil.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Páginas</h4>
+      <a href="sobre.html">Sobre mim</a>
+      <a href="especialidades.html">Especialidades</a>
+      <a href="metodologia.html">Metodologia</a>
+      <a href="contato.html">Contato</a>
+    </div>
+    <div class="footer-col">
+      <h4>Especialidades</h4>
+      <a href="especialidades.html#fibromialgia">Fibromialgia</a>
+      <a href="especialidades.html#depressao">Depressão</a>
+      <a href="especialidades.html#ansiedade">Ansiedade</a>
+      <a href="especialidades.html#lgbtq">Diversidade Sexual</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5547992795755">WhatsApp</a>
+      <a href="https://instagram.com/psico.atualizando">Instagram</a>
+      <a href="https://linkedin.com/in/dafne-oliveira-deca-campos">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-crp">Dafne Oliveira Deça Campos · CRP-12/31909 · Psicóloga registrada no CRP — 12ª Região (SC)</span>
+    <span class="footer-crp">© 2026</span>
+  </div>
+</footer>
+
+<script>
+function enviarWhatsApp() {
+  const nome = document.getElementById('nome').value;
+  const motivo = document.getElementById('motivo').value;
+  const mensagem = document.getElementById('mensagem').value;
+
+  let texto = 'Olá, Dafne! Vim pelo site e gostaria de saber mais sobre atendimento.';
+  if (nome) texto += `\n\nMeu nome é ${nome}.`;
+  if (motivo) texto += `\nEstou buscando ajuda para: ${motivo}.`;
+  if (mensagem) texto += `\n\n${mensagem}`;
+
+  const url = `https://wa.me/5547992795755?text=${encodeURIComponent(texto)}`;
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
