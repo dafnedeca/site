@@ -5,164 +5,677 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dafne Deça — Psicóloga | Análise do Comportamento</title>
   <meta name="description" content="Psicóloga especializada em Análise do Comportamento. Atendimento online. CRP-12/31909.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* ─────────────────────────────────────────────
+       DESIGN SYSTEM — Dafne Deça
+       Use estas variáveis em todo material de comunicação:
+       posts, apresentações, PDFs, e-mails, stories.
+    ───────────────────────────────────────────── */
     :root {
-      --primary: #4A7C74;
-      --primary-dark: #2D5C55;
-      --accent: #C4956A;
-      --bg: #F9F5EF;
-      --white: #FFFFFF;
-      --text: #2C3E35;
-      --text-light: #6B7B74;
-      --border: #E5DDD0;
+      /* CORES */
+      --c-violet:   #6D28D9;   /* primária — autoridade, profundidade */
+      --c-pink:     #EC4899;   /* secundária — calor, conexão */
+      --c-emerald:  #059669;   /* acento — saúde, crescimento */
+      --c-amber:    #F59E0B;   /* destaque — energia, atenção */
+      --c-dark:     #1A1033;   /* fundo escuro */
+      --c-bg:       #FAFAF9;   /* fundo claro */
+      --c-text:     #1F2937;   /* texto principal */
+      --c-muted:    #6B7280;   /* texto secundário */
+      --c-border:   #E5E7EB;   /* bordas */
+      --c-white:    #FFFFFF;
+
+      /* GRADIENTES */
+      --g-primary:  linear-gradient(135deg, var(--c-violet) 0%, #9333EA 100%);
+      --g-warm:     linear-gradient(135deg, var(--c-pink) 0%, var(--c-amber) 100%);
+      --g-cool:     linear-gradient(135deg, var(--c-violet) 0%, var(--c-pink) 100%);
+
+      /* TIPOGRAFIA */
+      --f-heading:  'Plus Jakarta Sans', sans-serif;
+      --f-body:     'Inter', sans-serif;
+
+      /* ESPAÇAMENTO */
+      --radius-sm:  8px;
+      --radius-md:  16px;
+      --radius-lg:  24px;
+      --radius-xl:  40px;
+
+      /* SOMBRAS */
+      --shadow-sm:  0 2px 8px rgba(109,40,217,.10);
+      --shadow-md:  0 8px 32px rgba(109,40,217,.15);
+      --shadow-lg:  0 20px 60px rgba(109,40,217,.20);
     }
-    body { font-family: Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    /* RESET */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--f-body);
+      background: var(--c-bg);
+      color: var(--c-text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
     nav {
-      background: var(--white); padding: 1rem 2rem;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
-      border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;
+      padding: 1rem 3rem;
+      background: rgba(26, 16, 51, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    .nav-brand { font-size: 1.1rem; font-weight: bold; color: var(--primary); text-decoration: none; }
-    .nav-crp { font-size: 0.85rem; color: var(--text-light); }
-    .hero { background: var(--primary); color: var(--white); padding: 5rem 2rem; text-align: center; }
-    .hero h1 { font-size: 2.8rem; margin-bottom: 0.5rem; font-weight: normal; }
-    .hero h2 { font-size: 1.2rem; font-weight: normal; opacity: 0.85; margin-bottom: 0.5rem; }
-    .hero .crp { font-size: 0.9rem; opacity: 0.7; margin-bottom: 2rem; }
-    .btn {
-      display: inline-block; background: var(--accent); color: var(--white);
-      padding: 0.9rem 2.2rem; border-radius: 30px; text-decoration: none; font-size: 1rem;
-      transition: background 0.2s;
+    .nav-logo {
+      font-family: var(--f-heading);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--c-white);
+      text-decoration: none;
+      letter-spacing: -0.02em;
     }
-    .btn:hover { background: #b5824f; }
-    section { padding: 4rem 2rem; max-width: 860px; margin: 0 auto; }
-    section h2 { font-size: 1.7rem; color: var(--primary); margin-bottom: 1.5rem; font-weight: normal; }
-    section p { margin-bottom: 1rem; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
-    .card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.5rem; border-top: 3px solid var(--primary);
+    .nav-logo span { color: var(--c-pink); }
+    .nav-crp {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      font-family: var(--f-body);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
-    .card h3 { font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; }
-    .card p { font-size: 0.9rem; color: var(--text-light); margin: 0; }
-    .steps { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
-    .step { display: flex; gap: 1rem; align-items: flex-start; }
-    .step-num {
-      background: var(--primary); color: white; width: 2rem; height: 2rem;
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem; flex-shrink: 0;
+    .nav-cta {
+      background: var(--g-warm);
+      color: var(--c-white);
+      padding: 0.55rem 1.4rem;
+      border-radius: var(--radius-xl);
+      text-decoration: none;
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: opacity 0.2s, transform 0.2s;
     }
-    .step-text strong { display: block; margin-bottom: 0.2rem; }
-    .step-text p { margin: 0; font-size: 0.95rem; }
-    hr.divider { border: none; border-top: 1px solid var(--border); max-width: 860px; margin: 0 auto; }
-    .contact-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
-    .contact-link {
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      background: var(--c-dark);
+      display: flex;
+      align-items: center;
+      padding: 8rem 3rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(109,40,217,0.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(236,72,153,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4rem;
+      align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(109,40,217,0.25);
+      border: 1px solid rgba(109,40,217,0.4);
+      color: #C4B5FD;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-xl);
+      margin-bottom: 1.5rem;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--c-pink);
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-family: var(--f-heading);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--c-white);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: var(--g-cool);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 8px; padding: 0.75rem 1.25rem;
-      text-decoration: none; color: var(--text); font-size: 0.95rem;
-      transition: border-color 0.2s;
+      background: var(--g-warm);
+      color: var(--c-white);
+      padding: 1rem 2rem;
+      border-radius: var(--radius-xl);
+      text-decoration: none;
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(236,72,153,0.4);
     }
-    .contact-link:hover { border-color: var(--primary); color: var(--primary); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(236,72,153,0.5); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.8);
+      padding: 1rem 2rem;
+      border-radius: var(--radius-xl);
+      text-decoration: none;
+      font-family: var(--f-heading);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+    .hero-badge {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      min-width: 200px;
+    }
+    .hero-badge .badge-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .hero-badge .badge-label {
+      font-family: var(--f-heading);
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--c-white);
+      display: block;
+      line-height: 1.1;
+    }
+    .hero-badge .badge-sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.25rem;
+    }
+
+    /* ─── WAVE DIVIDER ─── */
+    .wave {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .wave svg { display: block; width: 100%; }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 6rem 3rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-violet);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--f-heading);
+      font-weight: 800;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--c-dark);
+      margin-bottom: 1rem;
+    }
+    .section-title em {
+      font-style: normal;
+      background: var(--g-cool);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-body {
+      font-size: 1.05rem;
+      color: var(--c-muted);
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    /* ─── SOBRE ─── */
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .sobre-num {
+      font-family: var(--f-heading);
+      font-weight: 800;
+      font-size: 8rem;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 2px var(--c-border);
+      user-select: none;
+      margin-bottom: -1rem;
+    }
+    .sobre-right {
+      background: var(--c-white);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--c-border);
+    }
+    .sobre-right p { color: var(--c-muted); margin-bottom: 1rem; }
+    .sobre-right p:last-child { margin-bottom: 0; }
+    .highlight-pill {
+      display: inline-block;
+      background: rgba(109,40,217,0.08);
+      color: var(--c-violet);
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-xl);
+      margin: 0.25rem 0.2rem;
+    }
+
+    /* ─── ÁREAS ─── */
+    .areas-bg { background: var(--c-dark); }
+    .areas-bg .section-title { color: var(--c-white); }
+    .areas-bg .section-body { color: rgba(255,255,255,0.55); }
+    .areas-bg .section-tag { color: #C4B5FD; }
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .area-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      transition: transform 0.25s, background 0.25s;
+      cursor: default;
+    }
+    .area-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,0.08);
+    }
+    .area-num {
+      font-family: var(--f-heading);
+      font-weight: 800;
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .area-card:nth-child(1) .area-num { color: var(--c-violet); }
+    .area-card:nth-child(2) .area-num { color: var(--c-pink); }
+    .area-card:nth-child(3) .area-num { color: var(--c-emerald); }
+    .area-card:nth-child(4) .area-num { color: var(--c-amber); }
+    .area-title {
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--c-white);
+      margin-bottom: 0.6rem;
+    }
+    .area-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    /* ─── PROCESSO ─── */
+    .processo-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 3rem;
+      position: relative;
+    }
+    .processo-steps::before {
+      content: '';
+      position: absolute;
+      top: 2.5rem;
+      left: calc(16.66% + 2rem);
+      right: calc(16.66% + 2rem);
+      height: 2px;
+      background: linear-gradient(90deg, var(--c-violet), var(--c-pink));
+      z-index: 0;
+    }
+    .pstep {
+      text-align: center;
+      padding: 0 1.5rem;
+      position: relative; z-index: 1;
+    }
+    .pstep-num {
+      width: 5rem; height: 5rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--f-heading);
+      font-weight: 800;
+      font-size: 1.4rem;
+      margin: 0 auto 1.5rem;
+    }
+    .pstep:nth-child(1) .pstep-num { background: var(--g-primary); color: white; box-shadow: 0 4px 20px rgba(109,40,217,0.4); }
+    .pstep:nth-child(2) .pstep-num { background: var(--g-cool); color: white; box-shadow: 0 4px 20px rgba(236,72,153,0.4); }
+    .pstep:nth-child(3) .pstep-num { background: var(--g-warm); color: white; box-shadow: 0 4px 20px rgba(245,158,11,0.4); }
+    .pstep-title {
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--c-dark);
+      margin-bottom: 0.5rem;
+    }
+    .pstep-desc { font-size: 0.9rem; color: var(--c-muted); line-height: 1.7; }
+
+    /* ─── CTA ─── */
+    .cta-section {
+      background: var(--g-primary);
+      padding: 6rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 300px; height: 300px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+    }
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 200px; height: 200px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+    .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .cta-section h2 {
+      font-family: var(--f-heading);
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.025em;
+      color: var(--c-white);
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+    }
+    .cta-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--c-white);
+      color: var(--c-violet);
+      padding: 1rem 2rem;
+      border-radius: var(--radius-xl);
+      text-decoration: none;
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
+    .cta-btn-outline {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.4);
+      color: var(--c-white);
+      padding: 1rem 2rem;
+      border-radius: var(--radius-xl);
+      text-decoration: none;
+      font-family: var(--f-heading);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .cta-btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+    /* ─── FOOTER ─── */
     footer {
-      background: var(--primary-dark); color: rgba(255,255,255,0.75);
-      text-align: center; padding: 2rem; font-size: 0.85rem;
+      background: #0D0921;
+      color: rgba(255,255,255,0.45);
+      padding: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
     }
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2rem; }
-      .hero, section { padding: 3rem 1.5rem; }
+    .footer-brand {
+      font-family: var(--f-heading);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--c-white);
+    }
+    .footer-brand span { color: var(--c-pink); }
+    footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
+    footer a:hover { color: var(--c-pink); }
+    .footer-links { display: flex; gap: 1.5rem; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 860px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-crp { display: none; }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-badge { display: none; }
+      .section { padding: 4rem 1.5rem; }
+      .sobre-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .sobre-num { font-size: 5rem; }
+      .processo-steps { grid-template-columns: 1fr; }
+      .processo-steps::before { display: none; }
+      .pstep { padding: 0; margin-bottom: 2.5rem; }
+      .cta-section { padding: 4rem 1.5rem; }
+      footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
     }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a href="#" class="nav-brand">Dafne Deça</a>
+  <a href="#" class="nav-logo">Dafne<span>.</span></a>
   <span class="nav-crp">CRP-12/31909</span>
+  <a href="https://wa.me/5547992795755" class="nav-cta">Agendar →</a>
 </nav>
 
-<div class="hero">
-  <h1>Dafne Deça</h1>
-  <h2>Psicóloga · Analista do Comportamento</h2>
-  <p class="crp">CRP-12/31909 · Atendimento Online</p>
-  <a href="https://wa.me/5547992795755" class="btn">Agendar consulta</a>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Psicóloga · Análise do Comportamento</div>
+      <h1>
+        Comportamento<br>
+        é <em>ciência.</em><br>
+        Cuidado é escolha.
+      </h1>
+      <p class="hero-desc">
+        Sou Dafne Deça, psicóloga com foco em Análise do Comportamento. Atendo online, com rigor científico e escuta humana.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5547992795755" class="btn-primary">
+          💬 Agendar consulta
+        </a>
+        <a href="#sobre" class="btn-ghost">Saber mais</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <span class="badge-icon">🧠</span>
+      <span class="badge-label">CRP<br>12/31909</span>
+      <p class="badge-sub">Registro ativo · CRP-SC</p>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave">
+  <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,60 L0,30 Q360,0 720,30 Q1080,60 1440,30 L1440,60 Z" fill="#1A1033"/>
+  </svg>
 </div>
 
-<section>
-  <h2>Sobre mim</h2>
-  <p>Sou Dafne Deça, psicóloga com formação em Análise do Comportamento (ABA/Behaviorismo Radical). Atuo como pesquisadora e escritora científica, transformando ciência em prática acessível.</p>
-  <p>Meu trabalho é baseado em evidências. Acredito que compreender o comportamento humano é o primeiro passo para uma vida mais saudável e significativa.</p>
-</section>
-
-<hr class="divider">
-
-<section>
-  <h2>Como posso ajudar</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Análise do Comportamento</h3>
-      <p>Abordagem baseada em evidências para compreender e modificar comportamentos de forma ética e eficaz.</p>
-    </div>
-    <div class="card">
-      <h3>Saúde Mental e Bem-estar</h3>
-      <p>Suporte para ansiedade, dificuldades emocionais e desenvolvimento de habilidades de autocuidado.</p>
-    </div>
-    <div class="card">
-      <h3>Diversidade e Inclusão</h3>
-      <p>Atendimento afirmativo para pessoas LGBTQ+, com escuta respeitosa e acolhedora.</p>
-    </div>
-    <div class="card">
-      <h3>Prevenção e Crise</h3>
-      <p>Formação especializada em prevenção do suicídio e manejo de situações de crise.</p>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<section>
-  <h2>Atendimento Online</h2>
-  <p>Todas as sessões são realizadas online, com segurança, privacidade e o mesmo cuidado de uma consulta presencial.</p>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-text">
-        <strong>Primeiro contato</strong>
-        <p>Entre em contato pelo WhatsApp ou Instagram para agendar uma conversa inicial.</p>
+<!-- SOBRE -->
+<section class="section" id="sobre">
+  <div class="section-inner">
+    <div class="sobre-grid">
+      <div>
+        <div class="sobre-num">01</div>
+        <div class="section-tag">Sobre mim</div>
+        <h2 class="section-title">Ciência aplicada à<br><em>vida real</em></h2>
       </div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-text">
-        <strong>Sessão inicial</strong>
-        <p>Conversa para entender o que você está vivendo e definir os objetivos do acompanhamento.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-text">
-        <strong>Acompanhamento</strong>
-        <p>Sessões semanais por videochamada, em plataforma segura e de sua escolha.</p>
+      <div class="sobre-right">
+        <p>Sou Dafne Deça, psicóloga formada com orientação em <strong>Análise do Comportamento</strong> (ABA / Behaviorismo Radical). Pesquisadora, escritora científica e profissional comprometida com evidências.</p>
+        <p>Acredito que entender o comportamento humano é o ponto de partida para uma vida mais saudável, relações mais saudáveis e escolhas mais conscientes.</p>
+        <p>Atendo <strong>online</strong>, com sigilo, estrutura e presença.</p>
+        <div style="margin-top:1.5rem;">
+          <span class="highlight-pill">Análise do Comportamento</span>
+          <span class="highlight-pill">Atendimento Online</span>
+          <span class="highlight-pill">SC · Brasil</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<hr class="divider">
-
-<section>
-  <h2>Contato</h2>
-  <p>Entre em contato para agendar sua consulta ou tirar dúvidas.</p>
-  <div class="contact-links">
-    <a href="https://wa.me/5547992795755" class="contact-link">📱 WhatsApp</a>
-    <a href="https://instagram.com/psico.atualizando" class="contact-link">📷 @psico.atualizando</a>
-    <a href="https://linkedin.com/in/dafne-oliveira-deca-campos" class="contact-link">💼 LinkedIn</a>
+<!-- ÁREAS -->
+<section class="section areas-bg" id="areas">
+  <div class="section-inner">
+    <div class="section-tag">Especialidades</div>
+    <h2 class="section-title" style="color:white">Como posso <em>te ajudar</em></h2>
+    <p class="section-body">Cada pessoa é única. O ponto de partida é entender o que você está vivendo e o que quer construir.</p>
+    <div class="areas-grid">
+      <div class="area-card">
+        <div class="area-num">01</div>
+        <div class="area-title">Análise do Comportamento</div>
+        <p class="area-desc">Abordagem científica para entender e transformar comportamentos, com estratégias baseadas em evidências.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-num">02</div>
+        <div class="area-title">Saúde Mental</div>
+        <p class="area-desc">Suporte para ansiedade, dificuldades emocionais e desenvolvimento de habilidades de autocuidado.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-num">03</div>
+        <div class="area-title">Diversidade e Identidade</div>
+        <p class="area-desc">Atendimento afirmativo para pessoas LGBTQ+, com escuta respeitosa, ética e acolhedora.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-num">04</div>
+        <div class="area-title">Prevenção e Crise</div>
+        <p class="area-desc">Formação especializada em prevenção do suicídio e manejo de situações de crise com cuidado e técnica.</p>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- WAVE INVERTIDA -->
+<div class="wave" style="background:#1A1033">
+  <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,0 L0,30 Q360,60 720,30 Q1080,0 1440,30 L1440,0 Z" fill="#FAFAF9"/>
+  </svg>
+</div>
+
+<!-- COMO FUNCIONA -->
+<section class="section" id="atendimento">
+  <div class="section-inner">
+    <div style="text-align:center; margin-bottom:1rem;">
+      <div class="section-tag">Atendimento online</div>
+      <h2 class="section-title">Como <em>funciona</em></h2>
+      <p class="section-body" style="margin: 0 auto;">Sem burocracia. Três passos para começar.</p>
+    </div>
+    <div class="processo-steps">
+      <div class="pstep">
+        <div class="pstep-num">1</div>
+        <div class="pstep-title">Primeiro contato</div>
+        <p class="pstep-desc">Você manda uma mensagem pelo WhatsApp ou Instagram. Conversamos sobre o que você está buscando.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">2</div>
+        <div class="pstep-title">Sessão inicial</div>
+        <p class="pstep-desc">Primeira conversa por videochamada. Entendemos o que você vive e definimos os objetivos juntos.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">3</div>
+        <div class="pstep-title">Acompanhamento</div>
+        <p class="pstep-desc">Sessões semanais na plataforma que preferir. Seguro, privado, no seu tempo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contato">
+  <div class="cta-inner">
+    <h2>Pronto para começar?</h2>
+    <p>Dê o primeiro passo. Uma mensagem já é suficiente.</p>
+    <div class="cta-links">
+      <a href="https://wa.me/5547992795755" class="cta-btn">
+        📱 WhatsApp
+      </a>
+      <a href="https://instagram.com/psico.atualizando" class="cta-btn-outline">
+        📷 @psico.atualizando
+      </a>
+      <a href="https://linkedin.com/in/dafne-oliveira-deca-campos" class="cta-btn-outline">
+        💼 LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>Dafne Oliveira Deça Campos · CRP-12/31909</p>
-  <p style="margin-top:0.5rem;">Psicóloga registrada no CRP — 12ª Região (SC)</p>
+  <div class="footer-brand">Dafne<span>.</span> Deça</div>
+  <div>Dafne Oliveira Deça Campos · CRP-12/31909 · Psicóloga registrada no CRP-SC</div>
+  <div class="footer-links">
+    <a href="https://wa.me/5547992795755">WhatsApp</a>
+    <a href="https://instagram.com/psico.atualizando">Instagram</a>
+    <a href="https://linkedin.com/in/dafne-oliveira-deca-campos">LinkedIn</a>
+  </div>
 </footer>
 
 </body>
