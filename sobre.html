@@ -4,75 +4,117 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre — Dafne Deça, Psicóloga</title>
-  <meta name="description" content="Quem é Dafne Deça. Psicóloga com fibromialgia que transformou a experiência de viver com dor crônica em vocação científica. CRP-12/31909.">
+  <meta name="description" content="Dafne Deça é psicóloga com formação em psicologia e pesquisa aprofundada em fibromialgia, dor crônica e saúde mental. CRP-12/31909, Joinville/SC.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .timeline { max-width: 680px; margin: 3rem auto 0; position: relative; }
-    .timeline::before {
-      content: ''; position: absolute; left: 1.5rem; top: 0; bottom: 0;
-      width: 2px; background: linear-gradient(to bottom, var(--c-violet), var(--c-pink));
+    .story-section { padding: 5rem 3rem; }
+    .story-inner { max-width: 800px; margin: 0 auto; }
+    .story-inner h2 {
+      font-family: var(--f-heading); font-weight: 800;
+      font-size: clamp(1.6rem, 3vw, 2.3rem); letter-spacing: -0.025em;
+      color: var(--c-dark); margin-bottom: 1.25rem;
     }
-    .timeline-item { display: flex; gap: 2rem; margin-bottom: 2.5rem; }
+    .story-inner h2 em {
+      font-style: normal;
+      background: var(--g-cool);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .story-inner p {
+      font-size: 1.05rem; color: var(--c-muted); line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+    .story-inner blockquote {
+      border-left: 3px solid var(--c-pink); padding-left: 1.5rem;
+      margin: 2rem 0; font-style: italic; font-size: 1.1rem;
+      color: var(--c-text); line-height: 1.7;
+    }
+
+    .research-box {
+      background: var(--g-hero); border-radius: var(--r-lg);
+      padding: 2.5rem; margin: 2.5rem 0; color: white;
+    }
+    .research-box h3 {
+      font-family: var(--f-heading); font-weight: 800;
+      font-size: 1.15rem; margin-bottom: 1rem;
+    }
+    .research-box p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.75; margin-bottom: 0.75rem; }
+    .research-stats {
+      display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem;
+    }
+    .research-stat { text-align: center; }
+    .research-stat-num {
+      font-family: var(--f-heading); font-weight: 800; font-size: 2rem;
+      display: block; letter-spacing: -0.04em;
+    }
+    .research-stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+
+    .bariatric-box {
+      background: rgba(5,150,105,0.06); border: 1px solid rgba(5,150,105,0.2);
+      border-radius: var(--r-md); padding: 1.75rem; margin: 2rem 0;
+    }
+    .bariatric-box-title {
+      font-family: var(--f-heading); font-weight: 700; font-size: 0.78rem;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-emerald);
+      margin-bottom: 0.75rem;
+    }
+    .bariatric-box p { font-size: 0.95rem; color: var(--c-muted); line-height: 1.8; }
+
+    .divider-line {
+      height: 1px; background: var(--c-border);
+      margin: 3rem 0;
+    }
+
+    .timeline { margin: 2rem 0; }
+    .timeline-item {
+      display: flex; gap: 1.5rem; padding-bottom: 2rem;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: ''; position: absolute; left: 1.1rem; top: 2.2rem;
+      width: 2px; height: calc(100% - 2rem); background: var(--c-border);
+    }
+    .timeline-item:last-child::before { display: none; }
     .timeline-dot {
-      width: 3rem; height: 3rem; border-radius: 50%; flex-shrink: 0;
+      width: 2.4rem; height: 2.4rem; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; position: relative; z-index: 1;
+      font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
+      font-family: var(--f-heading); z-index: 1;
     }
-    .timeline-dot-1 { background: var(--g-primary); }
-    .timeline-dot-2 { background: var(--g-cool); }
-    .timeline-dot-3 { background: linear-gradient(135deg,#7C3AED,#059669); }
-    .timeline-dot-4 { background: var(--g-warm); }
-    .timeline-dot-5 { background: linear-gradient(135deg,#EC4899,#F59E0B); }
     .timeline-content {}
     .timeline-year {
-      font-family: var(--f-heading); font-weight: 700; font-size: 0.75rem;
+      font-family: var(--f-heading); font-weight: 700; font-size: 0.78rem;
       letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-violet);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
     }
     .timeline-title {
-      font-family: var(--f-heading); font-weight: 700; font-size: 1.05rem;
-      color: var(--c-dark); margin-bottom: 0.4rem;
+      font-family: var(--f-heading); font-weight: 700; font-size: 1rem;
+      color: var(--c-dark); margin-bottom: 0.3rem;
     }
-    .timeline-body { font-size: 0.95rem; color: var(--c-muted); line-height: 1.7; }
+    .timeline-body { font-size: 0.92rem; color: var(--c-muted); line-height: 1.7; }
 
     .cred-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem; margin-top: 2.5rem;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+      gap: 1rem; margin-top: 2rem;
     }
     .cred-card {
       background: var(--c-white); border: 1px solid var(--c-border);
-      border-radius: var(--r-md); padding: 1.5rem;
-      border-left: 4px solid var(--c-violet);
+      border-radius: var(--r-md); padding: 1.25rem;
     }
-    .cred-card h4 {
-      font-family: var(--f-heading); font-weight: 700; font-size: 0.9rem;
-      color: var(--c-dark); margin-bottom: 0.35rem;
+    .cred-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .cred-title {
+      font-family: var(--f-heading); font-weight: 700; font-size: 0.92rem;
+      color: var(--c-dark); margin-bottom: 0.2rem;
     }
-    .cred-card p { font-size: 0.85rem; color: var(--c-muted); }
+    .cred-sub { font-size: 0.82rem; color: var(--c-muted); }
 
-    .fibro-box {
-      background: linear-gradient(135deg, rgba(109,40,217,0.06), rgba(236,72,153,0.06));
-      border: 1px solid rgba(109,40,217,0.15);
-      border-radius: var(--r-lg); padding: 2.5rem; margin-top: 2rem;
+    @media (max-width: 700px) {
+      .story-section { padding: 4rem 1.5rem; }
+      .research-stats { gap: 1rem; }
     }
-    .fibro-box h3 {
-      font-family: var(--f-heading); font-weight: 800; font-size: 1.3rem;
-      color: var(--c-dark); margin-bottom: 1rem;
-    }
-    .fibro-box p { color: var(--c-muted); margin-bottom: 0.75rem; }
-    .fibro-box p:last-child { margin-bottom: 0; }
-    .fibro-stats { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem; }
-    .fibro-stat { }
-    .fibro-stat-num {
-      font-family: var(--f-heading); font-weight: 800; font-size: 1.8rem;
-      background: var(--g-cool);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text; display: block;
-    }
-    .fibro-stat-label { font-size: 0.8rem; color: var(--c-muted); }
   </style>
 </head>
 <body>
@@ -89,9 +131,11 @@
   <a href="https://wa.me/5547992795755" class="nav-cta">Agendar →</a>
 </nav>
 
+<!-- HEADER -->
 <div class="page-header">
-  <h1>Minha <em style="background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal">história</em></h1>
-  <p>Fui paciente antes de ser psicóloga. Aprendi a nomear o que sentia — e decidi ajudar outros a fazer o mesmo.</p>
+  <span class="section-tag" style="color:#C4B5FD">Quem eu sou</span>
+  <h1>Minha <em style="font-style:normal; background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">história</em></h1>
+  <p>Compreendi o sofrimento de dentro para fora — como paciente, como pesquisadora, como psicóloga.</p>
 </div>
 
 <div class="wave" style="background:var(--g-hero)">
@@ -100,147 +144,179 @@
   </svg>
 </div>
 
-<!-- HISTÓRIA -->
-<section class="section">
-  <div class="section-inner">
-    <div style="max-width:740px; margin:0 auto;">
-      <span class="section-tag">A história</span>
-      <h2 class="section-title">De paciente a<br><em>pesquisadora a psicóloga</em></h2>
-      <p style="font-size:1.1rem; color:var(--c-muted); line-height:1.85; margin-bottom:1.2rem;">
-        Há anos eu acordava com um cansaço que uma boa noite de sono não resolvia. Com dores que se moviam pelo corpo sem aviso. Com uma névoa mental que tornava difícil pensar, concentrar, lembrar. Fui a médicos que não encontraram nada. Ouvi que era "coisa da cabeça". Aprendi, da forma mais íntima possível, o que significa ter uma doença invisível.
-      </p>
-      <p style="font-size:1.1rem; color:var(--c-muted); line-height:1.85; margin-bottom:1.2rem;">
-        Quando fui diagnosticada com <strong style="color:var(--c-text)">fibromialgia</strong> — e comecei a entender a depressão e a ansiedade que caminhavam junto — não fiquei parada. Decidi estudar. Entender a ciência por trás do que sentia. Transformar a experiência em conhecimento.
-      </p>
-      <p style="font-size:1.1rem; color:var(--c-muted); line-height:1.85; margin-bottom:1.2rem;">
-        Meu TCC foi sobre o impacto psicológico da fibromialgia. Estudei sensibilização central, comorbidades psiquiátricas, estigma social, déficits cognitivos. Não como abstração — como alguém que reconhecia cada dado nos próprios relatos de vida.
-      </p>
-      <p style="font-size:1.1rem; color:var(--c-muted); line-height:1.85;">
-        Hoje, como psicóloga com CRP ativo e formação em <strong style="color:var(--c-text)">Análise do Comportamento</strong>, ofereço o que eu mesma precisei: um profissional que entende a dor por dentro, que não vai minimizar o que você sente, e que tem ferramentas científicas para te ajudar a atravessar.
-      </p>
+<!-- HISTÓRIA: O COMEÇO -->
+<div class="story-section">
+  <div class="story-inner">
+    <span class="section-tag">Como cheguei até aqui</span>
+    <h2>A psicóloga que <em>viveu o que trata</em></h2>
 
-      <div class="fibro-box">
-        <h3>O que pesquisei sobre fibromialgia</h3>
-        <p>A fibromialgia não é "só dor". Ela ativa a sensibilização central — o sistema nervoso amplifica sinais de dor sem lesão tecidual identificável. A substância P fica até 3x mais alta. A serotonina cai. O resultado é dor real, crônica e multidimensional.</p>
-        <p>E as comorbidades são altíssimas: quem tem fibromialgia tem probabilidade significativamente maior de também ter ansiedade e depressão — não como consequência da dor, mas como parte da mesma arquitetura neurológica e comportamental.</p>
-        <div class="fibro-stats">
-          <div class="fibro-stat">
-            <span class="fibro-stat-num">55%</span>
-            <div class="fibro-stat-label">de prevalência de ansiedade<br>em pacientes com FM</div>
-          </div>
-          <div class="fibro-stat">
-            <span class="fibro-stat-num">49%</span>
-            <div class="fibro-stat-label">de prevalência de depressão<br>em pacientes com FM</div>
-          </div>
-          <div class="fibro-stat">
-            <span class="fibro-stat-num">3×</span>
-            <div class="fibro-stat-label">mais substância P<br>no SNC de pacientes com FM</div>
-          </div>
+    <p>Não escolhi a psicologia por acidente. Cheguei à psicologia porque a vida me trouxe desafios de saúde que me forçaram a olhar para dentro — e a entender que o sofrimento físico e o emocional são inseparáveis.</p>
+
+    <p>Convivo com <strong>fibromialgia</strong> — uma síndrome de dor crônica que afeta o sistema nervoso, o sono, a cognição e a qualidade de vida. Por muito tempo ouvi que "não tinha nada nos exames". Aprendi na prática o que significa ter dor real sem validação médica. Esse caminho me fez entender, antes de qualquer livro, o que é viver com uma condição invisível.</p>
+
+    <p>Também passei pela <strong>cirurgia bariátrica</strong> — uma decisão de saúde que trouxe mudanças físicas significativas, mas também um processo psicológico profundo: lidar com a transformação do corpo, da identidade, dos hábitos, das emoções. É um caminho que exige acompanhamento — e poucos profissionais entendem de dentro.</p>
+
+    <blockquote>
+      "Quando você vive o que trata, a empatia não é uma técnica. Ela é estrutural — está na forma como você escuta, valida e conduz."
+    </blockquote>
+
+    <p>Hoje sou <strong>psicóloga</strong> (CRP-12/31909), sediada em Joinville, Santa Catarina, com atendimento online para todo o Brasil. Sou também mantenedora do canal <strong>@psico.atualizando</strong> no Instagram, onde produzo e compartilho conhecimento em psicologia de forma acessível — porque acredito que divulgação científica responsável é uma forma de cuidado coletivo.</p>
+
+    <div class="divider-line"></div>
+
+    <span class="section-tag">Pesquisa e formação</span>
+    <h2>Uma carreira construída em <em>profundidade</em></h2>
+
+    <p>Durante toda a minha trajetória acadêmica, me dediquei a entender a fibromialgia com a mesma seriedade que ela exige de quem a vive. Pesquisei, li, aprofundei. E continuo estudando — porque essa condição ainda é subestimada, e as pessoas que convivem com ela merecem profissionais que não param.</p>
+  </div>
+</div>
+
+<!-- CAIXA DE PESQUISA -->
+<div style="padding: 0 3rem;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <div class="research-box">
+      <h3>📊 O que a pesquisa revela sobre fibromialgia</h3>
+      <p>A fibromialgia é mais do que dor. É uma síndrome que afeta todo o funcionamento da pessoa — corpo, mente, vida social. Os dados são consistentes na literatura:</p>
+      <div class="research-stats">
+        <div class="research-stat">
+          <span class="research-stat-num" style="color:#C4B5FD">55%</span>
+          <span class="research-stat-label">têm ansiedade associada</span>
         </div>
-        <p style="margin-top:1.25rem; font-size:0.85rem; color:var(--c-muted)">
-          <em>Fontes: Gálvez-Sánchez et al. (2020); Avni et al. (2025); Pontes-Silva (2024) — estudos do TCC da Dafne Deça.</em>
-        </p>
+        <div class="research-stat">
+          <span class="research-stat-num" style="color:#FDE68A">49%</span>
+          <span class="research-stat-label">têm depressão associada</span>
+        </div>
+        <div class="research-stat">
+          <span class="research-stat-num" style="color:#A7F3D0">3×</span>
+          <span class="research-stat-label">mais substância P (dor amplificada)</span>
+        </div>
       </div>
+      <p style="margin-top:1.25rem; font-size:0.8rem; opacity:0.45">Gálvez-Sánchez et al.; Avni et al.; Pontes-Silva · Literatura revisada ao longo da formação acadêmica</p>
     </div>
   </div>
-</section>
+</div>
 
-<!-- TRAJETÓRIA -->
-<section class="section" style="background:var(--c-surface); padding-top:4rem; padding-bottom:4rem;">
-  <div class="section-inner">
-    <div style="text-align:center; margin-bottom:1rem;">
-      <span class="section-tag">Trajetória</span>
-      <h2 class="section-title">Como cheguei <em>até aqui</em></h2>
+<!-- BARIÁTRICA -->
+<div class="story-section" style="padding-top: 2rem;">
+  <div class="story-inner">
+    <div class="bariatric-box">
+      <div class="bariatric-box-title">🔄 Bariátrica: o que ninguém conta</div>
+      <p>A cirurgia bariátrica muda o corpo — mas também mexe com identidade, autoestima, relacionamentos e padrões emocionais que existiam muito antes da cirurgia. Vivi isso. Sei que a transformação não é só física, e sei que muitas pessoas chegam do outro lado sem o suporte psicológico que precisavam.</p>
+      <p>Ofereço acompanhamento para pessoas que estão <strong>antes, durante ou depois</strong> da cirurgia bariátrica — com atenção ao processo emocional que a mudança física inevitavelmente desencadeia.</p>
     </div>
+
+    <div class="divider-line"></div>
+
+    <!-- TIMELINE -->
+    <span class="section-tag">Linha do tempo</span>
+    <h2>De paciente a <em>psicóloga</em></h2>
+
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-dot timeline-dot-1">📚</div>
+        <div class="timeline-dot" style="background:var(--g-primary); color:white">21</div>
         <div class="timeline-content">
-          <div class="timeline-year">2021 – 2025</div>
-          <div class="timeline-title">Graduação em Psicologia — UniSociesc</div>
-          <p class="timeline-body">Formação com ênfase em Análise do Comportamento. TCC sobre impacto psicológico da fibromialgia. Atuação em liderança acadêmica e pesquisa científica.</p>
+          <div class="timeline-year">2021</div>
+          <div class="timeline-title">Início da graduação em Psicologia</div>
+          <div class="timeline-body">UniSociesc, Joinville/SC. Já carregando experiências pessoais com saúde que moldaram o olhar para a profissão.</div>
         </div>
       </div>
+
       <div class="timeline-item">
-        <div class="timeline-dot timeline-dot-2">🧬</div>
+        <div class="timeline-dot" style="background:linear-gradient(135deg,#7C3AED,#EC4899); color:white">22</div>
         <div class="timeline-content">
-          <div class="timeline-year">2022</div>
-          <div class="timeline-title">Formações complementares</div>
-          <p class="timeline-body">Neurociências aplicadas ao comportamento ativo e saudável · Psicologia e Diversidade Sexual · Identificação de Comportamento Suicida e Acolhimento Familiar.</p>
+          <div class="timeline-year">2022–2023</div>
+          <div class="timeline-title">Formação em prevenção do suicídio e neurociências</div>
+          <div class="timeline-body">Extensões em prevenção do suicídio, manejo de autolesão e neurociências aplicadas — área que se tornaria central na prática clínica.</div>
         </div>
       </div>
+
       <div class="timeline-item">
-        <div class="timeline-dot timeline-dot-3">🏥</div>
+        <div class="timeline-dot" style="background:var(--g-cool); color:white">24</div>
         <div class="timeline-content">
-          <div class="timeline-year">2025</div>
-          <div class="timeline-title">Estágio — Hospital Bethesda</div>
-          <p class="timeline-body">Experiência clínica supervisionada. Atuação multidisciplinar, contato com saúde mental no contexto hospitalar.</p>
+          <div class="timeline-year">2024–2025</div>
+          <div class="timeline-title">TCC sobre fibromialgia + Estágio hospitalar</div>
+          <div class="timeline-body">Pesquisa aprofundada sobre o impacto psicológico da fibromialgia. Estágio clínico no Hospital Bethesda — experiência com saúde mental em contexto hospitalar.</div>
         </div>
       </div>
+
       <div class="timeline-item">
-        <div class="timeline-dot timeline-dot-4">🎓</div>
+        <div class="timeline-dot" style="background:var(--g-warm); color:white">26</div>
         <div class="timeline-content">
-          <div class="timeline-year">Setembro 2026</div>
-          <div class="timeline-title">CRP ativo — CRP-12/31909</div>
-          <p class="timeline-body">Registro ativo no Conselho Regional de Psicologia — 12ª Região (Santa Catarina). Apta para atendimento clínico presencial e online.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot timeline-dot-5">🧠</div>
-        <div class="timeline-content">
-          <div class="timeline-year">Hoje</div>
-          <div class="timeline-title">Atendimento online · @psico.atualizando</div>
-          <p class="timeline-body">Atendimentos individuais online · Produção de conteúdo científico de psicologia · Pesquisa e escrita acadêmica · Construção de referência em fibromialgia e saúde mental.</p>
+          <div class="timeline-year">Set/2026</div>
+          <div class="timeline-title">CRP ativo — início do atendimento clínico</div>
+          <div class="timeline-body">CRP-12/31909 ativo desde 11 de setembro de 2026. Atendimento online para todo o Brasil, com foco em fibromialgia, dor crônica, saúde mental e bariátrica.</div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- CREDENCIAIS -->
-<section class="section">
+<!-- O QUE ME QUALIFICA -->
+<section class="section" style="background:var(--c-surface); padding-top:4rem; padding-bottom:5rem">
   <div class="section-inner">
-    <span class="section-tag">Credenciais e formação</span>
+    <span class="section-tag">Formação e credenciais</span>
     <h2 class="section-title">O que me <em>qualifica</em></h2>
+    <p class="section-body" style="max-width:600px">Uma formação construída com intencionalidade — cada curso, cada extensão, cada pesquisa convergiu para quem sou hoje como profissional.</p>
+
     <div class="cred-grid">
       <div class="cred-card">
-        <h4>CRP-12/31909</h4>
-        <p>Registro ativo no CRP — 12ª Região (SC). Verificável em crpsc.org.br.</p>
-      </div>
-      <div class="cred-card" style="border-color:var(--c-pink)">
-        <h4>Análise do Comportamento (ABA)</h4>
-        <p>Formação com ênfase em behaviorismo radical. Abordagem baseada em evidências.</p>
-      </div>
-      <div class="cred-card" style="border-color:var(--c-emerald)">
-        <h4>Prevenção do Suicídio</h4>
-        <p>ACAPS: Identificando Comportamento Suicida e Acolhimento Familiar (2023). Práticas de cuidado: prevenção e manejo de autolesão (2022).</p>
-      </div>
-      <div class="cred-card" style="border-color:var(--c-amber)">
-        <h4>Diversidade Sexual</h4>
-        <p>Formação em Psicologia e Diversidade Sexual (UNOVA, 2022). Atendimento afirmativo LGBTQ+.</p>
+        <div class="cred-icon">🎓</div>
+        <div class="cred-title">Psicóloga CRP-12/31909</div>
+        <div class="cred-sub">Graduação em Psicologia · UniSociesc · Ativa desde set/2026</div>
       </div>
       <div class="cred-card">
-        <h4>Neurociências do Comportamento</h4>
-        <p>Neurociências aplicadas ao comportamento ativo e saudável (UniSociesc, 2022).</p>
+        <div class="cred-icon">🧠</div>
+        <div class="cred-title">Pesquisa em Fibromialgia</div>
+        <div class="cred-sub">TCC sobre impacto psicológico da fibromialgia · Literatura biopsicossocial revisada ao longo da formação</div>
       </div>
-      <div class="cred-card" style="border-color:var(--c-pink)">
-        <h4>Pesquisadora e Escritora Científica</h4>
-        <p>Produção de artigos, revisão de textos acadêmicos, normalização ABNT/APA. Identidade profissional central.</p>
+      <div class="cred-card">
+        <div class="cred-icon">🏥</div>
+        <div class="cred-title">Estágio Hospitalar</div>
+        <div class="cred-sub">Hospital Bethesda · Psicologia clínica em contexto hospitalar · 2025</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">🆘</div>
+        <div class="cred-title">Prevenção do Suicídio</div>
+        <div class="cred-sub">ACAPS (2023) · Extensão UniSociesc (2022) · Identificação e acolhimento em crise</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">🔬</div>
+        <div class="cred-title">Neurociências Aplicadas</div>
+        <div class="cred-sub">Neurociências aplicada ao comportamento ativo e saudável · UniSociesc (2022)</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">👥</div>
+        <div class="cred-title">Psicologia Social Aplicada</div>
+        <div class="cred-sub">Análise e intervenção em psicologia social · Extensão UniSociesc (2024)</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">📋</div>
+        <div class="cred-title">Avaliação Psicológica</div>
+        <div class="cred-sub">Formação em avaliação psicológica · Processos psicológicos, biológicos e cognição</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">❤️‍🩹</div>
+        <div class="cred-title">Atenção Psicossocial em Saúde</div>
+        <div class="cred-sub">Cuidado integral · Extensão UniSociesc · Saúde mental no contexto de vida</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">📱</div>
+        <div class="cred-title">@psico.atualizando</div>
+        <div class="cred-sub">Mantenedora do canal de divulgação científica em psicologia · Instagram profissional</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section style="background:var(--g-primary); padding:5rem 3rem; text-align:center;">
-  <div style="max-width:600px; margin:0 auto;">
-    <h2 style="font-family:var(--f-heading); font-weight:800; font-size:clamp(1.8rem,3.5vw,2.5rem); color:white; letter-spacing:-0.025em; margin-bottom:1rem;">
-      Quer conversar com quem entende?
-    </h2>
-    <p style="color:rgba(255,255,255,0.7); margin-bottom:2rem; font-size:1.05rem;">
-      Agende uma sessão inicial. Uma mensagem já é suficiente para começar.
-    </p>
-    <a href="https://wa.me/5547992795755" class="btn btn-primary">💬 Falar no WhatsApp</a>
+<section class="section section-dark" style="text-align:center; padding:5rem 3rem">
+  <div class="section-inner">
+    <h2 class="section-title">Quer trabalhar <em>comigo</em>?</h2>
+    <p class="section-body" style="max-width:480px; margin:0 auto 2rem">Se a minha história faz sentido para o que você está vivendo, me chama. A conversa começa por aqui.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap">
+      <a href="https://wa.me/5547992795755" class="btn btn-primary">💬 Falar comigo</a>
+      <a href="metodologia.html" class="btn btn-outline">Ver o Método VIVER →</a>
+    </div>
   </div>
 </section>
 
@@ -248,7 +324,7 @@
   <div class="footer-inner">
     <div>
       <span class="footer-brand">Dafne<span>.</span> Deça</span>
-      <p class="footer-desc">Psicóloga especializada em Análise do Comportamento. Atendimento online para fibromialgia, dor crônica, depressão e ansiedade.</p>
+      <p class="footer-desc">Psicóloga com pesquisa em fibromialgia, dor crônica e saúde mental. Atendimento online para todo o Brasil.</p>
     </div>
     <div class="footer-col">
       <h4>Páginas</h4>
@@ -258,11 +334,10 @@
       <a href="contato.html">Contato</a>
     </div>
     <div class="footer-col">
-      <h4>Especialidades</h4>
-      <a href="especialidades.html#fibromialgia">Fibromialgia</a>
-      <a href="especialidades.html#depressao">Depressão</a>
-      <a href="especialidades.html#ansiedade">Ansiedade</a>
-      <a href="especialidades.html#lgbtq">Diversidade</a>
+      <h4>Formação</h4>
+      <a href="sobre.html">Minha história</a>
+      <a href="sobre.html">Pesquisa</a>
+      <a href="sobre.html">Credenciais</a>
     </div>
     <div class="footer-col">
       <h4>Contato</h4>
@@ -273,7 +348,7 @@
   </div>
   <div class="footer-bottom">
     <span class="footer-crp">Dafne Oliveira Deça Campos · CRP-12/31909 · Psicóloga registrada no CRP — 12ª Região (SC)</span>
-    <span class="footer-crp">© 2026 · Todos os direitos reservados</span>
+    <span class="footer-crp">© 2026</span>
   </div>
 </footer>
 

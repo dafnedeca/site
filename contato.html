@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contato — Dafne Deça, Psicóloga</title>
-  <meta name="description" content="Agende sua consulta com Dafne Deça, psicóloga especializada em fibromialgia, dor crônica, ansiedade e depressão. Atendimento online para todo o Brasil.">
+  <meta name="description" content="Agende sua consulta online com Dafne Deça, psicóloga. Atendimento por videochamada para todo o Brasil. CRP-12/31909.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -14,7 +14,6 @@
       display: grid; grid-template-columns: 1fr 1.2fr;
       gap: 4rem; align-items: start; margin-top: 3rem;
     }
-    .contact-left {}
     .contact-card {
       background: var(--c-white); border: 1px solid var(--c-border);
       border-radius: var(--r-lg); padding: 2rem; margin-bottom: 1.25rem;
@@ -27,7 +26,6 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 1.4rem; flex-shrink: 0;
     }
-    .contact-card-content {}
     .contact-card-title {
       font-family: var(--f-heading); font-weight: 700; font-size: 1rem;
       color: var(--c-dark); margin-bottom: 0.2rem;
@@ -62,7 +60,38 @@
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
       border-color: var(--c-violet); box-shadow: 0 0 0 3px rgba(109,40,217,0.1);
     }
-    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    /* Checkboxes multi-select */
+    .checkbox-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.5rem; margin-top: 0.25rem;
+    }
+    .checkbox-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.6rem 0.9rem; border: 1.5px solid var(--c-border);
+      border-radius: var(--r-md); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      font-family: var(--f-heading); font-size: 0.84rem; font-weight: 600;
+      color: var(--c-text);
+    }
+    .checkbox-item:hover { border-color: var(--c-violet); }
+    .checkbox-item input[type="checkbox"] { display: none; }
+    .checkbox-item .check-box {
+      width: 1.1rem; height: 1.1rem; border-radius: 4px;
+      border: 2px solid var(--c-border); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+      font-size: 0.65rem; color: transparent;
+    }
+    .checkbox-item.selected {
+      border-color: var(--c-violet);
+      background: rgba(109,40,217,0.05);
+    }
+    .checkbox-item.selected .check-box {
+      background: var(--c-violet); border-color: var(--c-violet); color: white;
+    }
+
     .form-submit {
       width: 100%; padding: 1rem;
       background: var(--g-warm); color: var(--c-white);
@@ -88,6 +117,7 @@
 
     @media (max-width: 760px) {
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .checkbox-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -107,9 +137,9 @@
 
 <!-- HEADER -->
 <div class="page-header">
-  <span class="section-tag" style="color:#C4B5FD">Vamos conversar</span>
+  <span class="section-tag" style="color:#C4B5FD">Atendimento online</span>
   <h1>Agende sua <em style="font-style:normal; background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">consulta</em></h1>
-  <p>O primeiro passo é o mais difícil. Depois disso, caminhamos juntos.</p>
+  <p>O primeiro passo é o mais difícil. Depois disso, caminhamos juntos — por videochamada, de onde você estiver.</p>
 </div>
 
 <div class="wave" style="background:var(--g-hero)">
@@ -123,14 +153,14 @@
   <div class="section-inner">
     <div class="contact-grid">
 
-      <!-- LEFT: CANAIS -->
-      <div class="contact-left">
+      <!-- LEFT -->
+      <div>
         <span class="section-tag">Canais de contato</span>
         <h2 class="section-title" style="font-size:clamp(1.6rem,2.5vw,2.2rem); margin-bottom:2rem">Escolha <em>como prefere</em></h2>
 
         <a href="https://wa.me/5547992795755" class="contact-card" target="_blank">
           <div class="contact-card-icon" style="background:rgba(37,211,102,0.1); color:#25D366">💬</div>
-          <div class="contact-card-content">
+          <div>
             <div class="contact-card-title">WhatsApp</div>
             <div class="contact-card-sub">Resposta mais rápida. Direto ao assunto.</div>
             <div class="contact-card-value">+55 (47) 99279-5755</div>
@@ -139,16 +169,16 @@
 
         <a href="https://instagram.com/psico.atualizando" class="contact-card" target="_blank">
           <div class="contact-card-icon" style="background:rgba(236,72,153,0.1); color:var(--c-pink)">📸</div>
-          <div class="contact-card-content">
+          <div>
             <div class="contact-card-title">Instagram</div>
-            <div class="contact-card-sub">Conteúdo diário. DM aberto.</div>
+            <div class="contact-card-sub">Canal de divulgação científica em psicologia. DM aberto.</div>
             <div class="contact-card-value">@psico.atualizando</div>
           </div>
         </a>
 
         <a href="https://linkedin.com/in/dafne-oliveira-deca-campos" class="contact-card" target="_blank">
           <div class="contact-card-icon" style="background:rgba(10,102,194,0.1); color:#0A66C2">💼</div>
-          <div class="contact-card-content">
+          <div>
             <div class="contact-card-title">LinkedIn</div>
             <div class="contact-card-sub">Parceria profissional, acadêmica ou de pesquisa.</div>
             <div class="contact-card-value">Dafne Oliveira Deça Campos</div>
@@ -156,17 +186,17 @@
         </a>
 
         <div class="contact-card" style="cursor:default; background:var(--c-surface)">
-          <div class="contact-card-icon" style="background:rgba(109,40,217,0.1); color:var(--c-violet)">📍</div>
-          <div class="contact-card-content">
-            <div class="contact-card-title">Atendimento online</div>
+          <div class="contact-card-icon" style="background:rgba(109,40,217,0.1); color:var(--c-violet)">💻</div>
+          <div>
+            <div class="contact-card-title">Atendimento 100% online</div>
             <div class="contact-card-sub">Para todo o Brasil, via videochamada. Joinville, SC.</div>
             <div class="contact-card-value">CRP-12/31909</div>
           </div>
         </div>
 
-        <div style="margin-top:2rem; padding:1.5rem; background:rgba(109,40,217,0.05); border:1px solid rgba(109,40,217,0.15); border-radius:var(--r-md)">
-          <div style="font-family:var(--f-heading); font-weight:700; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-violet); margin-bottom:0.5rem">Horário de retorno</div>
-          <p style="font-size:0.9rem; color:var(--c-muted); line-height:1.7">Segunda a sexta, horário comercial. Costumo responder no mesmo dia. Fins de semana podem ter demora.</p>
+        <div style="margin-top:1.5rem; padding:1.25rem; background:rgba(109,40,217,0.05); border:1px solid rgba(109,40,217,0.15); border-radius:var(--r-md)">
+          <div style="font-family:var(--f-heading); font-weight:700; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-violet); margin-bottom:0.4rem">Retorno</div>
+          <p style="font-size:0.88rem; color:var(--c-muted); line-height:1.65">Segunda a sexta, horário comercial. Costumo responder no mesmo dia.</p>
         </div>
       </div>
 
@@ -174,46 +204,79 @@
       <div>
         <div class="form-box">
           <h3>Me conta um pouquinho</h3>
-          <p>Não precisa explicar tudo agora — só o suficiente pra eu entender como posso ajudar.</p>
+          <p>Não precisa explicar tudo agora — só o suficiente para eu entender como posso ajudar.</p>
 
-          <form action="https://wa.me/5547992795755" id="contact-form">
-            <div class="form-group">
-              <label for="nome">Nome</label>
-              <input type="text" id="nome" name="nome" placeholder="Como prefere ser chamado(a)?">
-            </div>
-            <div class="form-group">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" placeholder="seu@email.com">
-            </div>
-            <div class="form-group">
-              <label for="whatsapp">WhatsApp (opcional)</label>
-              <input type="tel" id="whatsapp" name="whatsapp" placeholder="(xx) 9xxxx-xxxx">
-            </div>
-            <div class="form-group">
-              <label for="motivo">O que te trouxe até aqui?</label>
-              <select id="motivo" name="motivo">
-                <option value="">Selecione...</option>
-                <option>Fibromialgia / dor crônica</option>
-                <option>Depressão</option>
-                <option>Ansiedade</option>
-                <option>Diversidade sexual / identidade de gênero</option>
-                <option>Mais de um dos acima</option>
-                <option>Outro</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="mensagem">Quer contar algo mais? (opcional)</label>
-              <textarea id="mensagem" name="mensagem" placeholder="Fique à vontade. Isso fica só entre nós."></textarea>
-            </div>
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" placeholder="Como prefere ser chamado(a)?">
+          </div>
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" placeholder="(xx) 9xxxx-xxxx">
+          </div>
 
-            <button type="button" class="form-submit" onclick="enviarWhatsApp()">
-              💬 Enviar pelo WhatsApp
-            </button>
-            <p class="form-note">Suas informações são tratadas com sigilo total. CRP-12/31909.</p>
-          </form>
+          <div class="form-group">
+            <label>O que te trouxe até aqui? <span style="font-weight:400; color:var(--c-muted)">(pode marcar mais de um)</span></label>
+            <div class="checkbox-grid" id="motivoGrid">
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="Fibromialgia / dor crônica">
+                <span class="check-box">✓</span>
+                Fibromialgia / dor crônica
+              </label>
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="Depressão">
+                <span class="check-box">✓</span>
+                Depressão
+              </label>
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="Ansiedade / fobia social">
+                <span class="check-box">✓</span>
+                Ansiedade / fobia social
+              </label>
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="TDAH">
+                <span class="check-box">✓</span>
+                TDAH
+              </label>
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="Burnout">
+                <span class="check-box">✓</span>
+                Burnout
+              </label>
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="Borderline / bipolaridade">
+                <span class="check-box">✓</span>
+                Borderline / bipolaridade
+              </label>
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="Ideação suicida / autolesão">
+                <span class="check-box">✓</span>
+                Ideação suicida / autolesão
+              </label>
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="Cirurgia bariátrica">
+                <span class="check-box">✓</span>
+                Cirurgia bariátrica
+              </label>
+              <label class="checkbox-item" onclick="toggleCheck(this)" style="grid-column: 1/-1">
+                <input type="checkbox" value="Outro">
+                <span class="check-box">✓</span>
+                Outro / não sei ainda
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem">Quer contar algo mais? <span style="font-weight:400; color:var(--c-muted)">(opcional)</span></label>
+            <textarea id="mensagem" placeholder="Fique à vontade. Isso fica só entre nós."></textarea>
+          </div>
+
+          <button type="button" class="form-submit" onclick="enviarWhatsApp()">
+            💬 Enviar pelo WhatsApp
+          </button>
+          <p class="form-note">Suas informações são tratadas com sigilo total. CRP-12/31909.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -226,37 +289,27 @@
 
     <div class="faq-item">
       <div class="faq-q">Atende presencialmente ou só online?</div>
-      <div class="faq-a">Por enquanto, atendimento <strong>100% online</strong>, por videochamada. Você pode escolher a plataforma que preferir — Google Meet, Zoom ou Teams. Para quem tem fibromialgia e dor crônica, o online também tem a vantagem de não exigir deslocamento nos dias difíceis.</div>
+      <div class="faq-a">Atendimento <strong>100% online</strong>, por videochamada. Você escolhe a plataforma — Google Meet, Zoom ou Teams. Para quem tem fibromialgia e dor crônica, o online também elimina o desgaste do deslocamento nos dias difíceis.</div>
     </div>
-
+    <div class="faq-item">
+      <div class="faq-q">Atende para todo o Brasil?</div>
+      <div class="faq-a">Sim. Sendo online, atendo qualquer pessoa em território nacional. Minha formação é pela 12ª Região (SC), CRP-12/31909.</div>
+    </div>
     <div class="faq-item">
       <div class="faq-q">Quanto tempo dura uma sessão?</div>
-      <div class="faq-a">50 minutos. É o padrão da prática clínica em psicologia — tempo suficiente para aprofundar sem esgotar.</div>
+      <div class="faq-a">50 minutos. Padrão da prática clínica em psicologia — tempo suficiente para aprofundar sem esgotar.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-q">Com que frequência são as sessões?</div>
-      <div class="faq-a">Geralmente semanal. Em momentos de maior demanda (crises, processo intenso), pode ser duas vezes por semana. A frequência é definida juntos, de acordo com seu ritmo e objetivos.</div>
+      <div class="faq-q">Como é a primeira sessão?</div>
+      <div class="faq-a">É uma sessão de escuta e avaliação. Você conta o que quiser sobre o que está vivendo. Não precisa chegar organizado — pode ser o caos mesmo. É a partir daí que trabalhamos.</div>
     </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Como funciona a primeira sessão?</div>
-      <div class="faq-a">É uma sessão de escuta e avaliação. Você conta o que quiser sobre o que está vivendo, e eu faço perguntas para entender melhor o contexto. Não precisa chegar com tudo organizado — pode ser o caos mesmo. É a partir daí que trabalhamos.</div>
-    </div>
-
     <div class="faq-item">
       <div class="faq-q">Você atende plano de saúde?</div>
-      <div class="faq-a">Ainda não. Atendimento particular por enquanto. Mas posso emitir recibo para reembolso, caso seu plano ofereça essa possibilidade — entre em contato para verificar.</div>
+      <div class="faq-a">Ainda não. Atendimento particular. Mas emito recibo para reembolso quando o plano oferece essa possibilidade — me pergunte.</div>
     </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Você atende para todo o Brasil?</div>
-      <div class="faq-a">Sim! Sendo online, atendo qualquer pessoa em território nacional registrada no CFP. Minha formação é pela 12ª Região (SC), CRP-12/31909.</div>
-    </div>
-
     <div class="faq-item" style="border-bottom:none">
       <div class="faq-q">E se eu não me identificar com nenhuma das especialidades listadas?</div>
-      <div class="faq-a">Entre em contato mesmo assim. Talvez o que você está vivendo se encaixa em algo que atendo, só não está listado explicitamente. E se não for o caso, serei honesta sobre isso e, se possível, te direciono para alguém que pode ajudar melhor.</div>
+      <div class="faq-a">Me chame mesmo assim. Talvez o que você está vivendo se encaixa em algo que atendo, só não está listado explicitamente. E se não for o caso, serei honesta e, se possível, te direciono para alguém que pode ajudar melhor.</div>
     </div>
   </div>
 </section>
@@ -265,7 +318,7 @@
 <section class="section section-dark" style="text-align:center; padding:5rem 3rem">
   <div class="section-inner">
     <h2 class="section-title">Ainda em dúvida? <em>Normal.</em></h2>
-    <p class="section-body" style="max-width:500px; margin:0 auto 2rem">A dúvida de se isso vai funcionar, se vale a pena, se você vai conseguir — é parte do processo. Você não precisa ter certeza pra começar. Só precisa dar um passo.</p>
+    <p class="section-body" style="max-width:500px; margin:0 auto 2rem">Você não precisa ter certeza para começar. Só precisa dar um passo.</p>
     <a href="https://wa.me/5547992795755" class="btn btn-primary" style="font-size:1.05rem; padding:1.1rem 2.5rem">💬 Esse é o passo</a>
   </div>
 </section>
@@ -274,7 +327,7 @@
   <div class="footer-inner">
     <div>
       <span class="footer-brand">Dafne<span>.</span> Deça</span>
-      <p class="footer-desc">Psicóloga especializada em Análise do Comportamento. Atendimento online para todo o Brasil.</p>
+      <p class="footer-desc">Psicóloga com pesquisa em fibromialgia e dor crônica. Atendimento online para todo o Brasil.</p>
     </div>
     <div class="footer-col">
       <h4>Páginas</h4>
@@ -286,9 +339,9 @@
     <div class="footer-col">
       <h4>Especialidades</h4>
       <a href="especialidades.html#fibromialgia">Fibromialgia</a>
-      <a href="especialidades.html#depressao">Depressão</a>
-      <a href="especialidades.html#ansiedade">Ansiedade</a>
-      <a href="especialidades.html#lgbtq">Diversidade Sexual</a>
+      <a href="especialidades.html#depressao-ansiedade">Depressão &amp; Ansiedade</a>
+      <a href="especialidades.html#tdah-burnout">TDAH &amp; Burnout</a>
+      <a href="especialidades.html#bariatrica">Bariátrica</a>
     </div>
     <div class="footer-col">
       <h4>Contato</h4>
@@ -304,18 +357,24 @@
 </footer>
 
 <script>
+function toggleCheck(el) {
+  el.classList.toggle('selected');
+}
+
 function enviarWhatsApp() {
-  const nome = document.getElementById('nome').value;
-  const motivo = document.getElementById('motivo').value;
-  const mensagem = document.getElementById('mensagem').value;
+  const nome = document.getElementById('nome').value.trim();
+  const whatsapp = document.getElementById('whatsapp').value.trim();
+  const mensagem = document.getElementById('mensagem').value.trim();
+  const selecionados = [...document.querySelectorAll('.checkbox-item.selected input')]
+    .map(i => i.value);
 
   let texto = 'Olá, Dafne! Vim pelo site e gostaria de saber mais sobre atendimento.';
   if (nome) texto += `\n\nMeu nome é ${nome}.`;
-  if (motivo) texto += `\nEstou buscando ajuda para: ${motivo}.`;
+  if (whatsapp) texto += `\nMeu WhatsApp: ${whatsapp}.`;
+  if (selecionados.length) texto += `\nO que me trouxe aqui: ${selecionados.join(', ')}.`;
   if (mensagem) texto += `\n\n${mensagem}`;
 
-  const url = `https://wa.me/5547992795755?text=${encodeURIComponent(texto)}`;
-  window.open(url, '_blank');
+  window.open(`https://wa.me/5547992795755?text=${encodeURIComponent(texto)}`, '_blank');
 }
 </script>
 
