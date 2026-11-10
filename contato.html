@@ -46,7 +46,7 @@
     }
     .form-box p { font-size: 0.9rem; color: var(--c-muted); margin-bottom: 1.75rem; }
     .form-group { margin-bottom: 1.25rem; }
-    .form-group label {
+    .form-group label:not(.checkbox-item) {
       display: block; font-family: var(--f-heading); font-weight: 600;
       font-size: 0.85rem; color: var(--c-dark); margin-bottom: 0.5rem;
     }
@@ -200,52 +200,52 @@
           <div class="form-group">
             <label>O que te trouxe até aqui? <span style="font-weight:400; color:var(--c-muted)">(pode marcar mais de um)</span></label>
             <div class="checkbox-grid" id="motivoGrid">
-              <label class="checkbox-item" onclick="toggleCheck(this)">
+              <label class="checkbox-item" onclick="toggleCheck(this, event)">
                 <input type="checkbox" value="Fibromialgia">
                 <span class="check-box">✓</span>
                 Fibromialgia
               </label>
-              <label class="checkbox-item" onclick="toggleCheck(this)">
+              <label class="checkbox-item" onclick="toggleCheck(this, event)">
                 <input type="checkbox" value="Dor crônica">
                 <span class="check-box">✓</span>
                 Dor crônica
               </label>
-              <label class="checkbox-item" onclick="toggleCheck(this)">
+              <label class="checkbox-item" onclick="toggleCheck(this, event)">
                 <input type="checkbox" value="Depressão">
                 <span class="check-box">✓</span>
                 Depressão
               </label>
-              <label class="checkbox-item" onclick="toggleCheck(this)">
+              <label class="checkbox-item" onclick="toggleCheck(this, event)">
                 <input type="checkbox" value="Ansiedade">
                 <span class="check-box">✓</span>
                 Ansiedade
               </label>
-              <label class="checkbox-item" onclick="toggleCheck(this)">
+              <label class="checkbox-item" onclick="toggleCheck(this, event)">
                 <input type="checkbox" value="Fobia Social">
                 <span class="check-box">✓</span>
                 Fobia Social
               </label>
-              <label class="checkbox-item" onclick="toggleCheck(this)">
+              <label class="checkbox-item" onclick="toggleCheck(this, event)">
                 <input type="checkbox" value="TDAH">
                 <span class="check-box">✓</span>
                 TDAH
               </label>
-              <label class="checkbox-item" onclick="toggleCheck(this)">
+              <label class="checkbox-item" onclick="toggleCheck(this, event)">
                 <input type="checkbox" value="Burnout">
                 <span class="check-box">✓</span>
                 Burnout
               </label>
-              <label class="checkbox-item" onclick="toggleCheck(this)">
+              <label class="checkbox-item" onclick="toggleCheck(this, event)">
                 <input type="checkbox" value="Borderline (TPB)">
                 <span class="check-box">✓</span>
                 Borderline (TPB)
               </label>
-              <label class="checkbox-item" onclick="toggleCheck(this)">
+              <label class="checkbox-item" onclick="toggleCheck(this, event)">
                 <input type="checkbox" value="Bipolaridade">
                 <span class="check-box">✓</span>
                 Bipolaridade
               </label>
-              <label class="checkbox-item" onclick="toggleCheck(this)" style="grid-column: 1/-1">
+              <label class="checkbox-item" onclick="toggleCheck(this, event)" style="grid-column: 1/-1">
                 <input type="checkbox" value="Outro">
                 <span class="check-box">✓</span>
                 Outro / não sei ainda
@@ -349,7 +349,8 @@
 </footer>
 
 <script>
-function toggleCheck(el) {
+function toggleCheck(el, event) {
+  if (event) event.preventDefault();
   el.classList.toggle('selected');
   atualizarBotao();
 }
