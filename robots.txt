@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.dafnepsicologa.com.br/sitemap.xml
