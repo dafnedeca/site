@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Especialidades — Dafne Deça, Psicóloga</title>
-  <meta name="description" content="Fibromialgia, dor crônica, depressão, ansiedade, TDAH, burnout, borderline e bipolaridade. Dafne Deça, psicóloga, CRP-12/31909.">
+  <meta name="description" content="Fibromialgia, dor crônica, depressão, ansiedade, fobia social, TDAH, burnout, borderline e bipolaridade. Dafne Deça, psicóloga, CRP-12/31909.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -34,11 +34,14 @@
     }
     .symptom-card {
       background: var(--c-white); border: 1px solid var(--c-border);
-      border-radius: var(--r-md); padding: 1rem; text-align: center;
+      border-radius: var(--r-md); padding: 1.25rem 1rem; text-align: center;
       font-family: var(--f-heading); font-size: 0.86rem; font-weight: 600;
-      color: var(--c-text); border-top: 3px solid var(--c-violet);
+      color: var(--c-text); border-top: 3px solid var(--card-color, var(--c-violet));
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .symptom-icon { width: 1.4rem; height: 1.4rem; margin-bottom: 0.4rem; color: var(--c-violet); }
+    .symptom-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .symptom-icon { width: 1.6rem; height: 1.6rem; color: var(--card-color, var(--c-violet)); }
 
     .approach-list { margin: 1.5rem 0; }
     .approach-item {
@@ -168,8 +171,11 @@
   <div class="spec-nav-inner">
     <a href="#fibromialgia" class="spec-nav-link active">Fibromialgia</a>
     <a href="#dor-cronica" class="spec-nav-link">Dor Crônica</a>
-    <a href="#depressao-ansiedade" class="spec-nav-link">Depressão &amp; Ansiedade</a>
-    <a href="#tdah-burnout" class="spec-nav-link">TDAH &amp; Burnout</a>
+    <a href="#depressao" class="spec-nav-link">Depressão</a>
+    <a href="#ansiedade" class="spec-nav-link">Ansiedade</a>
+    <a href="#fobia-social" class="spec-nav-link">Fobia Social</a>
+    <a href="#tdah" class="spec-nav-link">TDAH</a>
+    <a href="#burnout" class="spec-nav-link">Burnout</a>
     <a href="#personalidade-tpb" class="spec-nav-link">Borderline</a>
     <a href="#bipolaridade" class="spec-nav-link">Bipolaridade</a>
   </div>
@@ -183,8 +189,8 @@
         <span class="section-tag">Especialidade central</span>
         <h2>Fibromialgia:<br><em>dor que é real, mesmo quando ninguém acredita</em></h2>
         <p>Se você chegou até aqui carregando a fibromialgia, provavelmente já ouviu "não tem nada" em exames. Já duvidou da própria dor. Já se perguntou se é "só estresse". Não é.</p>
-        <p>A fibromialgia é uma condição reconhecida pela OMS, com mecanismo neurobiológico identificado: <strong>sensibilização central</strong> — o sistema nervoso amplifica os sinais de dor mesmo sem lesão tecidual. A dor difusa, o cansaço que não passa, a névoa mental — tudo isso tem explicação. E tem como trabalhar psicologicamente.</p>
-        <p>Pesquisei a fibromialgia ao longo de toda a minha formação acadêmica — e continuo estudando. É a condição que mais entendo, de dentro e de fora.</p>
+        <p>A fibromialgia é uma condição reconhecida pela OMS, com mecanismo neurobiológico identificado: <strong>sensibilização central</strong>: o sistema nervoso amplifica os sinais de dor mesmo sem lesão tecidual. A dor difusa, o cansaço que não passa, a névoa mental. Tudo isso tem explicação. E tem como trabalhar psicologicamente.</p>
+        <p>Pesquisei a fibromialgia ao longo de toda a minha formação acadêmica, e continuo estudando. É a condição que mais entendo, de dentro e de fora.</p>
       </div>
       <div class="visual-card">
         <div class="visual-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
@@ -209,14 +215,14 @@
     </div>
 
     <div class="symptom-grid" style="margin-top:3rem">
-      <div class="symptom-card"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>Sono não reparador</div>
-      <div class="symptom-card"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Dor difusa</div>
-      <div class="symptom-card"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>Fibrofog (névoa mental)</div>
-      <div class="symptom-card"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Fadiga intensa</div>
-      <div class="symptom-card"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>Rigidez matinal</div>
-      <div class="symptom-card"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Sofrimento psicológico</div>
-      <div class="symptom-card"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>Dificuldade de foco</div>
-      <div class="symptom-card"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>Cefaleia frequente</div>
+      <div class="symptom-card" style="--card-color:#7C3AED"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span>Sono não reparador</span></div>
+      <div class="symptom-card" style="--card-color:#EC4899"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><span>Dor difusa</span></div>
+      <div class="symptom-card" style="--card-color:#0EA5E9"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg><span>Névoa mental (fibrofog)</span></div>
+      <div class="symptom-card" style="--card-color:#D97706"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span>Fadiga intensa</span></div>
+      <div class="symptom-card" style="--card-color:#059669"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg><span>Rigidez matinal</span></div>
+      <div class="symptom-card" style="--card-color:#E11D48"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Sofrimento psicológico</span></div>
+      <div class="symptom-card" style="--card-color:#9333EA"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg><span>Dificuldade de foco</span></div>
+      <div class="symptom-card" style="--card-color:#EA580C"><svg class="symptom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg><span>Cefaleia frequente</span></div>
     </div>
   </div>
 </section>
@@ -228,12 +234,12 @@
     <div class="spec-two">
       <div>
         <h2>Dor Crônica:<br><em>quando o corpo não para de falar</em></h2>
-        <p>Dor crônica é qualquer dor que persiste por mais de 3 meses. Não é exagero, não é fraqueza, não é "coisa da cabeça". É uma condição com mecanismos neurobiológicos próprios — e impacto que vai muito além do físico.</p>
-        <p>Afeta humor, sono, trabalho, relacionamentos, autoestima. Muitas pessoas chegam ao atendimento com anos de tratamento físico e nenhum suporte psicológico — como se a dor não tivesse dimensão emocional. Tem, e ela é enorme.</p>
+        <p>Dor crônica é qualquer dor que persiste por mais de 3 meses. Não é exagero, não é fraqueza, não é "coisa da cabeça". É uma condição com mecanismos neurobiológicos próprios, com impacto que vai muito além do físico.</p>
+        <p>Afeta humor, sono, trabalho, relacionamentos, autoestima. Muitas pessoas chegam ao atendimento com anos de tratamento físico e nenhum suporte psicológico, como se a dor não tivesse dimensão emocional. Tem, e ela é enorme.</p>
         <blockquote class="quote-pull">
           "Dor crônica não é só sobre o corpo. É sobre quem você se torna depois de anos vivendo com ela."
         </blockquote>
-        <p>O trabalho psicológico não substitui o tratamento médico — ele completa. Juntos, trabalhamos o sofrimento que a dor carrega e as ferramentas para viver melhor dentro dessa realidade.</p>
+        <p>O trabalho psicológico não substitui o tratamento médico: completa o trabalho. Juntos, trabalhamos o sofrimento que a dor carrega e as ferramentas para viver melhor dentro dessa realidade.</p>
       </div>
       <div>
         <div class="approach-list">
@@ -241,14 +247,14 @@
             <div class="approach-item-dot" style="background:var(--c-violet)"></div>
             <div class="approach-item-content">
               <strong>Aceitação sem resignação</strong>
-              <span>Aceitar a dor crônica não é desistir — é parar de gastar energia combatendo o que é real para investir no que pode mudar.</span>
+              <span>Aceitar a dor crônica não é desistir: é parar de gastar energia combatendo o que é real para investir no que pode mudar.</span>
             </div>
           </div>
           <div class="approach-item">
             <div class="approach-item-dot" style="background:var(--c-pink)"></div>
             <div class="approach-item-content">
               <strong>Luto das perdas funcionais</strong>
-              <span>Dor crônica traz perdas reais — de atividades, papéis, identidade. Esse luto precisa ser processado, não ignorado.</span>
+              <span>Dor crônica traz perdas reais: atividades, papéis, identidade. Esse luto precisa ser processado, não ignorado.</span>
             </div>
           </div>
           <div class="approach-item">
@@ -271,19 +277,18 @@
   </div>
 </section>
 
-<!-- ──────────────────────── DEPRESSÃO & ANSIEDADE ──────────────────────── -->
-<section id="depressao-ansiedade" class="section spec-section">
+<!-- ──────────────────────── DEPRESSÃO ──────────────────────── -->
+<section id="depressao" class="section spec-section">
   <div class="section-inner">
     <span class="section-tag">Especialidade</span>
     <div class="spec-two">
       <div>
-        <h2>Depressão <em>&amp; Ansiedade</em></h2>
-        <p>Depressão não é fraqueza. Não é tristeza passageira. É uma condição que altera o funcionamento — a forma como você sente prazer, processa emoções, enxerga o futuro. Ela não vai embora "com força de vontade". Mas tem tratamento.</p>
-        <p>Ansiedade é o alarme que não desliga. Útil no nível certo, uma prisão quando dispara o tempo todo. Tem origem em padrões aprendidos de esquiva, ruminação e antecipação de ameaças — e esses padrões podem ser modificados.</p>
+        <h2>Depressão:<br><em>não é fraqueza, é uma condição</em></h2>
+        <p>Depressão não é fraqueza. Não é tristeza passageira. É uma condição que altera o funcionamento: a forma como você sente prazer, processa emoções, enxerga o futuro. Ela não vai embora com força de vontade. Mas tem tratamento.</p>
         <blockquote class="quote-pull">
-          "As duas condições frequentemente coexistem — especialmente em quem convive com dor crônica. Cuidar de uma sem a outra é incompleto."
+          "Você não escolheu sentir assim. E não precisa atravessar isso sozinho."
         </blockquote>
-        <p>A psicologia tem intervenções eficazes para as duas. Você não precisa viver assim.</p>
+        <p>A psicologia tem intervenções eficazes. Você não precisa viver assim.</p>
       </div>
       <div>
         <div class="approach-list">
@@ -291,21 +296,21 @@
             <div class="approach-item-dot" style="background:var(--c-violet)"></div>
             <div class="approach-item-content">
               <strong>Compreensão do que mantém o sofrimento</strong>
-              <span>Antes de intervir, entendemos: o que sustenta a depressão ou a ansiedade no seu caso específico? Padrões de pensamento, esquiva, contexto de vida?</span>
+              <span>Antes de intervir, entendemos o que sustenta a depressão no seu caso: padrões de pensamento, inatividade, contexto de vida?</span>
             </div>
           </div>
           <div class="approach-item">
             <div class="approach-item-dot" style="background:var(--c-pink)"></div>
             <div class="approach-item-content">
-              <strong>Regulação emocional</strong>
-              <span>Habilidades concretas para modular a resposta emocional — não para ignorar o que sente, mas para não ser dominado por isso.</span>
+              <strong>Ativação comportamental</strong>
+              <span>A depressão reduz a capacidade de agir, e a inação aprofunda a depressão. Quebramos esse ciclo com movimento gradual em direção ao que importa.</span>
             </div>
           </div>
           <div class="approach-item">
             <div class="approach-item-dot" style="background:var(--c-emerald)"></div>
             <div class="approach-item-content">
               <strong>Redução da esquiva</strong>
-              <span>A esquiva é o que mantém os dois transtornos. Identificamos o que você evita e construímos estratégias graduais para se mover em direção à vida.</span>
+              <span>A esquiva é o que mantém o transtorno. Identificamos o que você evita e construímos estratégias graduais para se mover em direção à vida.</span>
             </div>
           </div>
           <div class="approach-item">
@@ -321,17 +326,16 @@
   </div>
 </section>
 
-<!-- ──────────────────────── TDAH & BURNOUT ──────────────────────── -->
-<section id="tdah-burnout" class="section spec-section" style="background:var(--c-surface)">
+<!-- ──────────────────────── ANSIEDADE ──────────────────────── -->
+<section id="ansiedade" class="section spec-section" style="background:var(--c-surface)">
   <div class="section-inner">
     <span class="section-tag">Especialidade</span>
     <div class="spec-two">
       <div>
-        <h2>TDAH <em>&amp; Burnout</em></h2>
-        <p>O TDAH não desaparece na vida adulta — ele muda de cara. Dificuldade de foco em tarefas longas, impulsividade, procrastinação crônica, sensação de "nunca estar no lugar certo". Muitos adultos chegam com décadas de "você poderia se esforçar mais" antes de entender o que está acontecendo.</p>
-        <p>Burnout não é cansaço comum — é esgotamento sistêmico. O trabalho consumiu tudo que você tinha, e ainda pediu mais. O resultado: exaustão, distância afetiva, sensação de ineficácia mesmo quando você objetivamente entrega resultados.</p>
+        <h2>Ansiedade:<br><em>o alarme que não desliga</em></h2>
+        <p>Ansiedade é o alarme que não desliga. Útil no nível certo, uma prisão quando dispara o tempo todo. Tem origem em padrões aprendidos de esquiva, ruminação e antecipação de ameaças. Esses padrões podem ser modificados.</p>
         <blockquote class="quote-pull">
-          "Construir estratégias que funcionam para o seu cérebro é diferente de tentar ser quem você não é."
+          "Não se trata de eliminar a ansiedade. É aprender a não ser controlado por ela."
         </blockquote>
       </div>
       <div>
@@ -339,29 +343,173 @@
           <div class="approach-item">
             <div class="approach-item-dot" style="background:var(--c-violet)"></div>
             <div class="approach-item-content">
-              <strong>TDAH: estratégias individualizadas</strong>
-              <span>Não existe "manual" para TDAH no adulto. Construímos juntos o que funciona para a sua rotina, não para um modelo idealizado de produtividade.</span>
+              <strong>Regulação emocional</strong>
+              <span>Habilidades concretas para modular a resposta emocional: não para ignorar o que sente, mas para não ser dominado por isso.</span>
             </div>
           </div>
           <div class="approach-item">
             <div class="approach-item-dot" style="background:var(--c-pink)"></div>
             <div class="approach-item-content">
-              <strong>TDAH: autocompaixão e autoconhecimento</strong>
-              <span>Décadas sendo comparado a "quem consegue" deixam marca. Trabalhamos a relação com a própria identidade e com as dificuldades reais do TDAH.</span>
-            </div>
-          </div>
-          <div class="approach-item">
-            <div class="approach-item-dot" style="background:var(--c-amber)"></div>
-            <div class="approach-item-content">
-              <strong>Burnout: recuperação de limites</strong>
-              <span>Identificamos o que esgotou o sistema. Recuperamos a capacidade de dizer não, de ter pausa sem culpa e de ressignificar a relação com o trabalho.</span>
+              <strong>Tolerância à incerteza</strong>
+              <span>Grande parte da ansiedade é sobre o que pode acontecer. Desenvolvemos a capacidade de existir no presente sem precisar controlar o futuro.</span>
             </div>
           </div>
           <div class="approach-item">
             <div class="approach-item-dot" style="background:var(--c-emerald)"></div>
             <div class="approach-item-content">
-              <strong>Burnout: ação orientada por valores</strong>
-              <span>O que realmente importa para você além da performance? Reconstruímos um modo de viver que tenha sentido — não só ausência de colapso.</span>
+              <strong>Redução da esquiva</strong>
+              <span>A esquiva parece aliviar no curto prazo e amplifica no longo. Identificamos o que você evita e construímos caminhos de retorno gradual.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-amber)"></div>
+            <div class="approach-item-content">
+              <strong>Manejo da ruminação</strong>
+              <span>O loop mental antecipatório tem padrões identificáveis. Trabalhamos para interrompê-lo e redirecionar a atenção para o que é real agora.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── FOBIA SOCIAL ──────────────────────── -->
+<section id="fobia-social" class="section spec-section">
+  <div class="section-inner">
+    <span class="section-tag">Especialidade</span>
+    <div class="spec-two">
+      <div>
+        <h2>Transtorno de Ansiedade Social:<br><em>o medo que isola</em></h2>
+        <p>O Transtorno de Ansiedade Social vai muito além de timidez. É o medo intenso de ser observado, avaliado ou humilhado em situações sociais, com impacto real no trabalho, nas relações e na qualidade de vida. Uma das condições mais subestimadas e, ao mesmo tempo, uma das que mais responde ao trabalho psicológico estruturado.</p>
+        <blockquote class="quote-pull">
+          "Você merece ocupar espaço. E isso pode ser aprendido."
+        </blockquote>
+      </div>
+      <div>
+        <div class="approach-list">
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-violet)"></div>
+            <div class="approach-item-content">
+              <strong>Exposição gradual</strong>
+              <span>Mapeamos as situações de evitação e construímos, passo a passo, a capacidade de estar presente nas situações que importam para você.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-pink)"></div>
+            <div class="approach-item-content">
+              <strong>Reestruturação das crenças sobre julgamento</strong>
+              <span>A fobia social se alimenta de predições sobre o que os outros pensam. Testamos essas crenças e construímos perspectivas mais realistas.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-emerald)"></div>
+            <div class="approach-item-content">
+              <strong>Habilidades sociais</strong>
+              <span>Desenvolvemos ferramentas práticas de comunicação e presença social, com foco em autenticidade, não em performance.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-amber)"></div>
+            <div class="approach-item-content">
+              <strong>Autocompaixão</strong>
+              <span>A autocrítica sustenta a fobia social. Construímos uma relação mais gentil com os próprios erros e imperfeições.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── TDAH ──────────────────────── -->
+<section id="tdah" class="section spec-section" style="background:var(--c-surface)">
+  <div class="section-inner">
+    <span class="section-tag">Especialidade</span>
+    <div class="spec-two">
+      <div>
+        <h2>TDAH:<br><em>estratégias para o seu cérebro real</em></h2>
+        <p>O TDAH não desaparece na vida adulta. Muda de cara. Dificuldade de foco em tarefas longas, impulsividade, procrastinação crônica, sensação de nunca estar no lugar certo. Muitos adultos chegam com décadas de "você poderia se esforçar mais" antes de entender o que está acontecendo.</p>
+        <blockquote class="quote-pull">
+          "Construir estratégias para o seu cérebro real é diferente de tentar ser quem você não é."
+        </blockquote>
+      </div>
+      <div>
+        <div class="approach-list">
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-violet)"></div>
+            <div class="approach-item-content">
+              <strong>Estratégias individualizadas</strong>
+              <span>Não existe manual para TDAH no adulto. Construímos juntos o que funciona para a sua rotina, não para um modelo idealizado de produtividade.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-pink)"></div>
+            <div class="approach-item-content">
+              <strong>Autocompaixão e autoconhecimento</strong>
+              <span>Décadas sendo comparado a "quem consegue" deixam marca. Trabalhamos a relação com a própria identidade e com as dificuldades reais do TDAH.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-emerald)"></div>
+            <div class="approach-item-content">
+              <strong>Estrutura e rotina adaptada</strong>
+              <span>Criamos sistemas de organização que respeitam como o seu cérebro funciona de verdade: flexíveis, práticos e sustentáveis no tempo.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-amber)"></div>
+            <div class="approach-item-content">
+              <strong>Manejo da impulsividade</strong>
+              <span>Desenvolvemos ferramentas para criar um espaço entre o impulso e a ação, ampliando a capacidade de escolha consciente.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── BURNOUT ──────────────────────── -->
+<section id="burnout" class="section spec-section">
+  <div class="section-inner">
+    <span class="section-tag">Especialidade</span>
+    <div class="spec-two">
+      <div>
+        <h2>Burnout:<br><em>esgotamento que vai além do cansaço</em></h2>
+        <p>Burnout não é cansaço comum. É esgotamento sistêmico. O trabalho consumiu tudo que você tinha, e ainda pediu mais. O resultado: exaustão, distância afetiva, sensação de ineficácia mesmo quando você objetivamente entrega resultados.</p>
+        <blockquote class="quote-pull">
+          "Descanso não é recompensa pelo trabalho. É condição para ele."
+        </blockquote>
+      </div>
+      <div>
+        <div class="approach-list">
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-violet)"></div>
+            <div class="approach-item-content">
+              <strong>Recuperação de limites</strong>
+              <span>Identificamos o que esgotou o sistema. Recuperamos a capacidade de dizer não, de ter pausa sem culpa e de ressignificar a relação com o trabalho.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-pink)"></div>
+            <div class="approach-item-content">
+              <strong>Identidade além da performance</strong>
+              <span>Quem você é quando não está produzindo? Reconstruímos a identidade em bases mais amplas que a entrega de resultados.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-emerald)"></div>
+            <div class="approach-item-content">
+              <strong>Ação orientada por valores</strong>
+              <span>O que realmente importa para você além da performance? Reconstruímos um modo de viver com sentido, não só ausência de colapso.</span>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-dot" style="background:var(--c-amber)"></div>
+            <div class="approach-item-content">
+              <strong>Prevenção de recaída</strong>
+              <span>Burnout tende a se repetir sem mudanças estruturais. Desenvolvemos estratégias para sair do ciclo, não só do episódio agudo.</span>
             </div>
           </div>
         </div>
@@ -482,8 +630,11 @@
       <h4>Especialidades</h4>
       <a href="#fibromialgia">Fibromialgia</a>
       <a href="#dor-cronica">Dor Crônica</a>
-      <a href="#depressao-ansiedade">Depressão &amp; Ansiedade</a>
-      <a href="#tdah-burnout">TDAH &amp; Burnout</a>
+      <a href="#depressao">Depressão</a>
+      <a href="#ansiedade">Ansiedade</a>
+      <a href="#fobia-social">Fobia Social</a>
+      <a href="#tdah">TDAH</a>
+      <a href="#burnout">Burnout</a>
       <a href="#personalidade-tpb">Borderline</a>
       <a href="#bipolaridade">Bipolaridade</a>
     </div>
