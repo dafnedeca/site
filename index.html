@@ -416,6 +416,7 @@
     <a href="contato.html">Contato</a>
   </div>
   <a href="https://wa.me/5547992795755" class="nav-cta">Agendar →</a>
+  <button class="nav-hamburger" aria-label="Menu" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- HERO — STORYTELLING -->
@@ -423,7 +424,7 @@
   <div class="hero-inner">
     <div class="hero-eyebrow">Psicóloga · CRP-12/31909 · Atendimento Online</div>
       <h1>
-        Psicoterapia para quem vive com dor e busca novas possibilidades de viver.
+        Psicoterapia para quem vive com dor e busca <em>novas possibilidades de viver.</em>
       </h1>
       <p class="hero-sub">
         Atendimento psicológico online, com foco em <strong>fibromialgia</strong>, <strong>dor crônica</strong> e <strong>saúde mental</strong>, fundamentado na <strong>Análise do Comportamento</strong> e na <strong>Terapia de Aceitação e Compromisso (ACT)</strong>.
@@ -679,5 +680,6 @@
   </div>
 </footer>
 
+<script>document.querySelectorAll(".nav-links a").forEach(a=>a.addEventListener("click",()=>a.closest("nav").classList.remove("nav-open")));</script>
 </body>
 </html>

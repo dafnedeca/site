@@ -358,6 +358,7 @@
     <a href="contato.html">Contato</a>
   </div>
   <a href="https://wa.me/5547992795755" class="nav-cta">Agendar →</a>
+  <button class="nav-hamburger" aria-label="Menu" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- HEADER -->
@@ -858,5 +859,6 @@
   </div>
 </footer>
 
+<script>document.querySelectorAll(".nav-links a").forEach(a=>a.addEventListener("click",()=>a.closest("nav").classList.remove("nav-open")));</script>
 </body>
 </html>
