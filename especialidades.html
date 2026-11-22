@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C1FVMWD3WG"></script>
+  <!-- Google tag (gtag.js) — Consent Mode v2 (LGPD) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {'analytics_storage': 'denied', 'ad_storage': 'denied', 'wait_for_update': 500});
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C1FVMWD3WG"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-C1FVMWD3WG');
   </script>
@@ -872,12 +875,13 @@
   </div>
   <div class="footer-bottom">
     <span class="footer-crp">Dafne Oliveira Deça Campos · CRP-12/31909 · Psicóloga registrada no CRP — 12ª Região (SC)</span>
-    <span class="footer-crp">© 2026</span>
+    <span class="footer-crp"><a href="privacidade.html" style="color:inherit; text-decoration:underline">Política de Privacidade</a> · © 2026</span>
   </div>
 </footer>
 
 <script type="speculationrules">{"prefetch":[{"source":"document","where":{"href_matches":"/*.html"},"eagerness":"moderate"}]}</script>
 <script>document.querySelectorAll(".nav-links a").forEach(a=>a.addEventListener("click",()=>a.closest("nav").classList.remove("nav-open")));</script>
+  <script src="js/cookie-consent.js" defer></script>
   <script src="js/analytics-events.js" defer></script>
 </body>
 </html>

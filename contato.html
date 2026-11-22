@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C1FVMWD3WG"></script>
+  <!-- Google tag (gtag.js) — Consent Mode v2 (LGPD) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {'analytics_storage': 'denied', 'ad_storage': 'denied', 'wait_for_update': 500});
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C1FVMWD3WG"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-C1FVMWD3WG');
   </script>
@@ -266,7 +269,7 @@
 
     .form-submit {
       width: 100%; padding: 1rem;
-      background: var(--g-warm); color: var(--c-white);
+      background: var(--g-warm); color: #1A1033;
       border: none; border-radius: var(--r-xl);
       font-family: var(--f-heading); font-weight: 700; font-size: 1rem;
       cursor: pointer; transition: opacity 0.2s, transform 0.2s;
@@ -434,10 +437,18 @@
             <textarea id="mensagem" placeholder="Fique à vontade. Isso fica só entre nós."></textarea>
           </div>
 
-          <button type="button" id="btnEnviar" class="form-submit" onclick="enviarWhatsApp()">
+          <div class="form-group" style="margin-bottom:1rem">
+            <label class="checkbox-item" id="consentLabel" onclick="toggleConsent(this, event)" style="align-items:flex-start; gap:0.75rem; padding:0.75rem 0.9rem; line-height:1.55; font-weight:400; color:var(--c-muted); font-size:0.82rem; cursor:pointer">
+              <input type="checkbox" id="consentCheck">
+              <span class="check-box" style="margin-top:2px; flex-shrink:0"></span>
+              Declaro que li e aceito a <a href="privacidade.html" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:var(--c-violet); text-decoration:underline">Política de Privacidade</a> e consinto com o uso dos dados informados, incluindo informações de saúde, para contato e agendamento de consulta com Dafne Oliveira Deça Campos (CRP-12/31909).
+            </label>
+          </div>
+
+          <button type="button" id="btnEnviar" class="form-submit" onclick="enviarWhatsApp()" disabled style="opacity:0.5; cursor:not-allowed">
             Enviar pelo WhatsApp
           </button>
-          <p class="form-note">Suas informações são tratadas com sigilo total. CRP-12/31909.</p>
+          <p class="form-note">Dados tratados com sigilo profissional. CRP-12/31909 · <a href="privacidade.html" style="color:var(--c-muted); text-decoration:underline">Política de Privacidade</a></p>
         </div>
       </div>
     </div>
@@ -521,7 +532,7 @@
   </div>
   <div class="footer-bottom">
     <span class="footer-crp">Dafne Oliveira Deça Campos · CRP-12/31909 · Psicóloga registrada no CRP — 12ª Região (SC)</span>
-    <span class="footer-crp">© 2026</span>
+    <span class="footer-crp"><a href="privacidade.html" style="color:inherit; text-decoration:underline">Política de Privacidade</a> · © 2026</span>
   </div>
 </footer>
 
@@ -532,22 +543,38 @@ function toggleCheck(el, event) {
   atualizarBotao();
 }
 
-function atualizarBotao() {
-  const selecionados = [...document.querySelectorAll('.checkbox-item.selected input')].map(i => i.value);
-  const btn = document.getElementById('btnEnviar');
-  if (!btn) return;
-  if (selecionados.length === 0) {
-    btn.textContent = 'Enviar pelo WhatsApp';
-  } else {
-    btn.textContent = `Enviar pelo WhatsApp (${selecionados.length} ${selecionados.length === 1 ? 'queixa' : 'queixas'} selecionada${selecionados.length === 1 ? '' : 's'})`;
+function toggleConsent(el, event) {
+  if (event) event.preventDefault();
+  el.classList.toggle('selected');
+  var checked = el.classList.contains('selected');
+  var btn = document.getElementById('btnEnviar');
+  if (btn) {
+    btn.disabled = !checked;
+    btn.style.opacity = checked ? '1' : '0.5';
+    btn.style.cursor = checked ? 'pointer' : 'not-allowed';
   }
+  atualizarBotao();
+}
+
+function atualizarBotao() {
+  var selecionados = [...document.querySelectorAll('#motivoGrid .checkbox-item.selected input')].map(i => i.value);
+  var btn = document.getElementById('btnEnviar');
+  if (!btn) return;
+  var label = selecionados.length === 0 ? 'Enviar pelo WhatsApp' :
+    'Enviar pelo WhatsApp (' + selecionados.length + ' ' + (selecionados.length === 1 ? 'queixa selecionada' : 'queixas selecionadas') + ')';
+  btn.textContent = label;
 }
 
 function enviarWhatsApp() {
+  var consentLabel = document.getElementById('consentLabel');
+  if (consentLabel && !consentLabel.classList.contains('selected')) {
+    alert('Por favor, aceite a Política de Privacidade antes de enviar.');
+    return;
+  }
   const nome = document.getElementById('nome') ? document.getElementById('nome').value.trim() : '';
   const whatsapp = document.getElementById('whatsapp') ? document.getElementById('whatsapp').value.trim() : '';
   const mensagem = document.getElementById('mensagem') ? document.getElementById('mensagem').value.trim() : '';
-  const selecionados = [...document.querySelectorAll('.checkbox-item.selected input')].map(i => i.value);
+  const selecionados = [...document.querySelectorAll('#motivoGrid .checkbox-item.selected input')].map(i => i.value);
 
   let texto = 'Olá, Dafne! Vim pelo site e gostaria de saber mais sobre atendimento.';
   if (nome) texto += `\n\nMeu nome é ${nome}.`;
@@ -561,6 +588,7 @@ function enviarWhatsApp() {
 
 <script type="speculationrules">{"prefetch":[{"source":"document","where":{"href_matches":"/*.html"},"eagerness":"moderate"}]}</script>
 <script>document.querySelectorAll(".nav-links a").forEach(a=>a.addEventListener("click",()=>a.closest("nav").classList.remove("nav-open")));</script>
+  <script src="js/cookie-consent.js" defer></script>
   <script src="js/analytics-events.js" defer></script>
 </body>
 </html>
