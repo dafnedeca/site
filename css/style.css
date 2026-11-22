@@ -326,6 +326,11 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
   /* Footer em coluna única */
   .footer-inner { grid-template-columns: 1fr; }
   .footer-bottom { font-size: 0.75rem; }
+  /* Footer centering */
+  .footer-inner > div:first-child { text-align: center; }
+  .footer-col { text-align: center; }
+  /* Privacy link: mais visível no mobile */
+  .footer-crp a { color: rgba(255,255,255,0.80); }
 
   /* Botões em tela cheia no mobile */
   .hero-actions { flex-direction: column; }

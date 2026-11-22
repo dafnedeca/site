@@ -265,7 +265,14 @@
 
     @media (max-width: 700px) {
       .story-section { padding: 4rem 1.5rem; }
-      .research-stats { gap: 1rem; }
+      .research-stats { gap: 1rem; justify-content: center; }
+      .story-inner > div[style*="float:right"] {
+        float: none !important;
+        margin: 0 auto 2rem !important;
+        display: block;
+      }
+      .timeline-item { gap: 1rem; }
+      .cred-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -478,6 +485,7 @@
       <a href="especialidades.html">Especialidades</a>
       <a href="metodologia.html">Metodologia</a>
       <a href="contato.html">Contato</a>
+      <a href="privacidade.html">Privacidade</a>
     </div>
     <div class="footer-col">
       <h3>Formação</h3>

@@ -408,8 +408,18 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 860px) {
       .hero { padding: 7rem 1.5rem 4rem; }
+      /* Hero — centralizado no mobile */
+      .hero-inner { text-align: center; }
+      .hero h1 { max-width: 100%; }
+      .hero-sub { max-width: 100%; }
+      .hero-eyebrow { margin: 0 auto 2rem; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      /* Identidade — centraliza texto quando grid empilha */
       .identidade-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .big-num { font-size: 6rem; }
+      .identidade-grid > div:first-child { text-align: center; }
+      .big-num { font-size: 6rem; text-align: center; }
+      .identidade-foto { margin: 0 auto; max-width: 420px; }
       .metod-steps { grid-template-columns: repeat(3,1fr); gap: 1rem; }
       .story-section { padding: 4rem 1.5rem; }
       .cta-section { padding: 4rem 1.5rem; }
@@ -678,6 +688,7 @@
       <a href="especialidades.html">Especialidades</a>
       <a href="metodologia.html">Metodologia</a>
       <a href="contato.html">Contato</a>
+      <a href="privacidade.html">Privacidade</a>
     </div>
     <div class="footer-col">
       <h3>Especialidades</h3>
