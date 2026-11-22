@@ -202,7 +202,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap"></noscript>
-  <link rel="preload" as="image" href="images/dafne-hero.webp" type="image/webp">
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* ─── HERO ─── */
@@ -267,7 +266,7 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text; display: block; line-height: 1.1;
     }
-    .hero-stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-top: 0.2rem; }
+    .hero-stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.75); margin-top: 0.2rem; }
     .hero-sub {
       font-size: 1.1rem; color: rgba(255,255,255,0.7);
       max-width: 520px; line-height: 1.8; margin-bottom: 2.5rem;
@@ -418,6 +417,7 @@
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
 <!-- NAV -->
 <nav>
@@ -433,7 +433,7 @@
   <a href="https://wa.me/5547992795755" class="nav-cta">Agendar →</a>
   <button class="nav-hamburger" aria-label="Menu" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
 </nav>
-<main>
+<main id="main-content">
 
 <!-- HERO — STORYTELLING -->
 <section class="hero">
@@ -496,7 +496,7 @@
       <div class="identidade-foto">
         <picture>
           <source srcset="images/dafne-hero.webp" type="image/webp">
-          <img src="images/dafne-hero.jpg" alt="Dafne Oliveira Deça Campos, psicóloga com foco em fibromialgia e dor crônica" loading="eager" fetchpriority="high" width="901" height="1280">
+          <img src="images/dafne-hero.jpg" alt="Dafne Oliveira Deça Campos, psicóloga com foco em fibromialgia e dor crônica" width="901" height="1280">
         </picture>
       </div>
     </div>

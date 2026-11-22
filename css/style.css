@@ -55,6 +55,23 @@ body {
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 
+/* ─── SKIP TO CONTENT (acessibilidade) ─── */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 1rem;
+  background: var(--c-violet);
+  color: var(--c-white);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--r-sm);
+  z-index: 999;
+  font-family: var(--f-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.skip-link:focus { left: 1rem; }
+
 /* ─── NAV ─── */
 .nav-mobile-cta { display: none; }
 nav {
@@ -169,7 +186,7 @@ nav {
 /* ─── FOOTER ─── */
 footer {
   background: #0D0721;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.65);
   padding: 3rem;
   font-size: 0.85rem;
 }
