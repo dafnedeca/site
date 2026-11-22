@@ -200,7 +200,9 @@
 </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap"></noscript>
+  <link rel="preload" as="image" href="images/dafne-hero.webp" type="image/webp">
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* ─── HERO ─── */
@@ -431,6 +433,7 @@
   <a href="https://wa.me/5547992795755" class="nav-cta">Agendar →</a>
   <button class="nav-hamburger" aria-label="Menu" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
 </nav>
+<main>
 
 <!-- HERO — STORYTELLING -->
 <section class="hero">
@@ -491,7 +494,10 @@
         <a href="sobre.html" class="btn btn-violet btn-sm">Ler minha história completa →</a>
       </div>
       <div class="identidade-foto">
-        <img src="images/dafne-hero.jpg" alt="Dafne Oliveira Deça Campos, psicóloga com foco em fibromialgia e dor crônica">
+        <picture>
+          <source srcset="images/dafne-hero.webp" type="image/webp">
+          <img src="images/dafne-hero.jpg" alt="Dafne Oliveira Deça Campos, psicóloga com foco em fibromialgia e dor crônica" loading="eager" fetchpriority="high" width="901" height="1280">
+        </picture>
       </div>
     </div>
   </div>
@@ -655,6 +661,7 @@
 </section>
 
 <!-- FOOTER -->
+</main>
 <footer>
   <div class="footer-inner">
     <div>

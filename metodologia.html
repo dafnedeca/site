@@ -183,7 +183,8 @@
 </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap"></noscript>
   <link rel="stylesheet" href="css/style.css">
   <style>
     .metod-hero {
@@ -297,6 +298,7 @@
   <a href="https://wa.me/5547992795755" class="nav-cta">Agendar →</a>
   <button class="nav-hamburger" aria-label="Menu" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
 </nav>
+<main>
 
 <!-- HEADER -->
 <div class="metod-hero">
@@ -505,6 +507,7 @@
   </div>
 </section>
 
+</main>
 <footer>
   <div class="footer-inner">
     <div>
