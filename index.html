@@ -362,14 +362,14 @@
     .story-section blockquote em {
       font-style: normal; color: #FDE68A;
     }
-    .story-sub { color: rgba(255,255,255,0.7); font-size: 1rem; }
+    .story-sub { color: rgba(255,255,255,0.95); font-size: 1rem; }
     .story-sig {
       margin-top: 2.5rem; display: inline-flex; align-items: center; gap: 1rem;
       background: rgba(255,255,255,0.1); border-radius: var(--r-xl);
       padding: 0.75rem 1.5rem;
     }
     .story-sig span { color: var(--c-white); font-family: var(--f-heading); font-weight: 700; font-size: 0.95rem; }
-    .story-sig small { color: rgba(255,255,255,0.6); font-size: 0.8rem; display: block; }
+    .story-sig small { color: rgba(255,255,255,0.95); font-size: 0.8rem; display: block; }
 
     /* ─── CTA ─── */
     .cta-section {
@@ -423,6 +423,7 @@
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">Dafne Oliveira<span>.</span> Deça Campos</a>
+  <button class="nav-hamburger" aria-label="Menu" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
   <div class="nav-links">
     <a href="index.html" class="active">Início</a>
     <a href="sobre.html">Sobre</a>
@@ -432,7 +433,6 @@
     <a href="https://wa.me/5547992795755" class="nav-mobile-cta">Agendar consulta →</a>
   </div>
   <a href="https://wa.me/5547992795755" class="nav-cta">Agendar →</a>
-  <button class="nav-hamburger" aria-label="Menu" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
 </nav>
 <main id="main-content">
 
@@ -507,7 +507,7 @@
 <!-- STORYTELLING -->
 <section class="story-section">
   <div class="story-inner">
-    <span class="section-tag" style="color:#C4B5FD">O que me diferencia</span>
+    <span class="section-tag" style="color:rgba(255,255,255,0.95)">O que me diferencia</span>
     <blockquote>
       "A maioria dos psicólogos <em>estudou</em> o sofrimento.<br>
       Eu também <em>vivi</em> ele, e aprendi a atravessá-lo."
