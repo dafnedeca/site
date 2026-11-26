@@ -467,48 +467,54 @@
         Psicoterapia para quem vive com dor e busca <em>novas possibilidades de viver.</em>
       </h1>
       <div class="hero-ribbon-wrap">
-      <svg viewBox="0 0 100 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Fita roxa da fibromialgia">
+      <svg viewBox="0 0 100 175" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Fita roxa da fibromialgia">
         <defs>
           <linearGradient id="rg" x1="30%" y1="0%" x2="70%" y2="100%">
-            <stop offset="0%" stop-color="#9333EA"/>
-            <stop offset="100%" stop-color="#6D28D9"/>
+            <stop offset="0%" stop-color="#A855F7"/>
+            <stop offset="100%" stop-color="#7C3AED"/>
           </linearGradient>
           <linearGradient id="rgd" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#7C3AED"/>
             <stop offset="100%" stop-color="#5B21B6"/>
           </linearGradient>
           <filter id="rs" x="-20%" y="-10%" width="140%" height="130%">
-            <feDropShadow dx="2" dy="4" stdDeviation="6" flood-color="rgba(93,33,182,0.3)"/>
+            <feDropShadow dx="1" dy="3" stdDeviation="5" flood-color="rgba(76,29,149,0.4)"/>
           </filter>
         </defs>
 
-        <!-- Cauda esquerda (atrás, mais escura) -->
-        <path d="M36,103 C26,120 14,142 12,162 L34,168 C36,148 46,124 60,110 Z" fill="url(#rgd)"/>
+        <!-- Pétala esquerda (camada de baixo, mais escura) + cauda esquerda -->
+        <path fill="url(#rgd)" d="M50,105 C30,100 8,82 8,55 C8,28 26,8 50,8 C38,8 24,26 24,55 C24,78 38,98 50,105 Z"/>
+        <path fill="url(#rgd)" d="M50,105 C38,116 22,142 16,168 L34,174 C40,150 50,124 58,112 Z"/>
 
-        <!-- Loop — anel elíptico com buraco (evenodd) -->
-        <path fill-rule="evenodd" fill="url(#rg)" filter="url(#rs)" d="
-          M50,6 C74.3,6 94,27.9 94,55 C94,82.1 74.3,104 50,104 C25.7,104 6,82.1 6,55 C6,27.9 25.7,6 50,6 Z
-          M50,31 C61,31 70,42.7 70,55 C70,67.3 61,79 50,79 C39,79 30,67.3 30,55 C30,42.7 39,31 50,31 Z
-        "/>
+        <!-- Pétala direita (frente) + cauda direita -->
+        <path filter="url(#rs)" fill="url(#rg)" d="M50,105 C70,100 92,82 92,55 C92,28 74,8 50,8 C62,8 76,26 76,55 C76,78 62,98 50,105 Z"/>
+        <path fill="url(#rg)" d="M42,112 C50,124 60,150 66,174 L84,168 C78,142 62,116 50,105 Z"/>
 
-        <!-- Cauda direita (frente) -->
-        <path d="M40,110 C54,124 64,148 66,168 L88,162 C86,142 74,120 64,103 Z" fill="url(#rg)"/>
+        <!-- Sombra no cruzamento das caudas -->
+        <path fill="#3B0764" opacity="0.45" d="M34,103 C40,99 60,99 66,103 C64,110 57,114 50,112 C43,114 36,110 34,103 Z"/>
 
-        <!-- Sombra no cruzamento -->
-        <path d="M36,103 C42,99 58,99 64,103 C62,110 56,114 50,112 C44,114 38,110 36,103 Z" fill="#4C1D95" opacity="0.3"/>
-
-        <!-- Costura — borda exterior do loop -->
-        <path d="M50,6 C74.3,6 94,27.9 94,55 C94,82.1 74.3,104 50,104 C25.7,104 6,82.1 6,55 C6,27.9 25.7,6 50,6 Z"
-              stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.5" fill="none"/>
-        <!-- Costura — borda interior do loop -->
-        <path d="M50,31 C61,31 70,42.7 70,55 C70,67.3 61,79 50,79 C39,79 30,67.3 30,55 C30,42.7 39,31 50,31 Z"
-              stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.5" fill="none"/>
+        <!-- Costura — borda exterior esq -->
+        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.45" fill="none"
+              d="M50,8 C26,8 8,28 8,55 C8,82 30,100 50,105"/>
+        <!-- Costura — borda exterior dir -->
+        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.45" fill="none"
+              d="M50,8 C74,8 92,28 92,55 C92,82 70,100 50,105"/>
+        <!-- Costura — borda interior esq (aresta do buraco) -->
+        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.35" fill="none"
+              d="M50,8 C38,8 24,26 24,55 C24,78 38,98 50,105"/>
+        <!-- Costura — borda interior dir -->
+        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.35" fill="none"
+              d="M50,8 C62,8 76,26 76,55 C76,78 62,98 50,105"/>
         <!-- Costura — cauda esquerda -->
-        <path d="M36,103 C26,120 14,142 12,162" stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.5" fill="none"/>
-        <path d="M60,110 C46,124 36,148 34,168" stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.5" fill="none"/>
+        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.4" fill="none"
+              d="M50,105 C38,116 22,142 16,168"/>
+        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.4" fill="none"
+              d="M58,112 C54,124 40,150 34,174"/>
         <!-- Costura — cauda direita -->
-        <path d="M64,103 C74,120 86,142 88,162" stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.5" fill="none"/>
-        <path d="M40,110 C54,124 64,148 66,168" stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.5" fill="none"/>
+        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.4" fill="none"
+              d="M50,105 C62,116 78,142 84,168"/>
+        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.4" fill="none"
+              d="M42,112 C46,124 60,150 66,174"/>
       </svg>
       </div><!-- /hero-ribbon-wrap -->
     </div><!-- /hero-title-row -->
