@@ -231,13 +231,8 @@
       flex: 1; min-width: 0;
     }
     .hero-ribbon-wrap {
-      flex-shrink: 0; width: 180px;
-      display: flex; flex-direction: column; align-items: center; gap: 1rem;
-    }
-    .hero-ribbon-label {
-      font-family: var(--f-heading); font-size: 0.7rem; font-weight: 600;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: #7B2DB0; text-align: center; line-height: 1.4;
+      flex-shrink: 0; width: 160px;
+      display: flex; align-items: center; justify-content: center;
     }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 0.6rem;
@@ -502,36 +497,49 @@
 
     <!-- Fita roxa da fibromialgia -->
     <div class="hero-ribbon-wrap">
-      <svg viewBox="0 0 110 190" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Fita roxa — conscientização sobre fibromialgia">
+      <svg viewBox="0 0 120 215" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Fita roxa da fibromialgia">
         <defs>
-          <linearGradient id="ribGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#C084FC"/>
-            <stop offset="50%" stop-color="#9333EA"/>
-            <stop offset="100%" stop-color="#6B21A8"/>
+          <linearGradient id="rg" x1="20%" y1="0%" x2="80%" y2="100%">
+            <stop offset="0%" stop-color="#8B35D6"/>
+            <stop offset="100%" stop-color="#5B0FAF"/>
           </linearGradient>
-          <linearGradient id="ribGradLight" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#D8B4FE" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="#C084FC" stop-opacity="0"/>
+          <linearGradient id="rgDark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6B21A8"/>
+            <stop offset="100%" stop-color="#4A0E8A"/>
           </linearGradient>
-          <filter id="ribShadow" x="-20%" y="-10%" width="140%" height="130%">
-            <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="rgba(109,33,168,0.25)"/>
+          <filter id="rs" x="-15%" y="-8%" width="130%" height="125%">
+            <feDropShadow dx="2" dy="5" stdDeviation="7" flood-color="rgba(60,10,120,0.35)"/>
           </filter>
         </defs>
-        <!-- Loop esquerdo -->
-        <path d="M55,42 C38,28 10,32 8,55 C6,76 30,90 55,108" stroke="url(#ribGrad)" stroke-width="13" stroke-linecap="round" fill="none" filter="url(#ribShadow)"/>
-        <!-- Loop direito -->
-        <path d="M55,42 C72,28 100,32 102,55 C104,76 80,90 55,108" stroke="url(#ribGrad)" stroke-width="13" stroke-linecap="round" fill="none" filter="url(#ribShadow)"/>
-        <!-- Cauda esquerda -->
-        <path d="M55,108 C44,124 36,148 32,175" stroke="url(#ribGrad)" stroke-width="13" stroke-linecap="round" fill="none"/>
-        <!-- Cauda direita -->
-        <path d="M55,108 C66,124 74,148 78,175" stroke="url(#ribGrad)" stroke-width="13" stroke-linecap="round" fill="none"/>
-        <!-- Reflexo no loop esquerdo -->
-        <path d="M55,42 C40,30 15,35 12,56" stroke="url(#ribGradLight)" stroke-width="5" stroke-linecap="round" fill="none"/>
-        <!-- Ponto dourado no nó -->
-        <circle cx="55" cy="108" r="5" fill="#C89614" opacity="0.9"/>
-        <circle cx="55" cy="108" r="3" fill="#FFD700"/>
+
+        <!-- Cauda esquerda (atrás) -->
+        <path d="M44,114 C36,138 26,168 16,202 L33,208 C41,174 51,144 62,120 Z" fill="url(#rgDark)"/>
+
+        <!-- Loop principal — forma de anel com evenodd -->
+        <path fill-rule="evenodd" fill="url(#rg)" filter="url(#rs)" d="
+          M60,114 C8,104 4,44 60,14 C116,44 112,104 60,114 Z
+          M60,94  C27,86  24,48  60,32 C96,48  93,86  60,94  Z
+        "/>
+
+        <!-- Cauda direita (frente) -->
+        <path d="M58,120 C69,144 79,174 87,208 L104,202 C94,168 84,138 76,114 Z" fill="url(#rg)"/>
+
+        <!-- Sombra no cruzamento -->
+        <path d="M44,114 C50,108 54,112 60,114 C66,112 70,108 76,114 C72,120 66,122 60,120 C54,122 48,120 44,114 Z" fill="#3A0870" opacity="0.45"/>
+
+        <!-- Costura pontilhada — borda exterior do loop -->
+        <path d="M60,14 C116,44 112,104 60,114" stroke="white" stroke-width="1.1" stroke-dasharray="4,3.5" opacity="0.5" fill="none"/>
+        <path d="M60,14 C4,44 8,104 60,114"   stroke="white" stroke-width="1.1" stroke-dasharray="4,3.5" opacity="0.5" fill="none"/>
+        <!-- Costura pontilhada — borda interior do loop -->
+        <path d="M60,32 C96,48 93,86 60,94"   stroke="white" stroke-width="1.1" stroke-dasharray="4,3.5" opacity="0.5" fill="none"/>
+        <path d="M60,32 C24,48 27,86 60,94"   stroke="white" stroke-width="1.1" stroke-dasharray="4,3.5" opacity="0.5" fill="none"/>
+        <!-- Costura pontilhada — cauda esquerda -->
+        <path d="M44,114 L16,202"             stroke="white" stroke-width="1.1" stroke-dasharray="4,3.5" opacity="0.5" fill="none"/>
+        <path d="M62,120 L33,208"             stroke="white" stroke-width="1.1" stroke-dasharray="4,3.5" opacity="0.5" fill="none"/>
+        <!-- Costura pontilhada — cauda direita -->
+        <path d="M76,114 L104,202"            stroke="white" stroke-width="1.1" stroke-dasharray="4,3.5" opacity="0.5" fill="none"/>
+        <path d="M58,120 L87,208"             stroke="white" stroke-width="1.1" stroke-dasharray="4,3.5" opacity="0.5" fill="none"/>
       </svg>
-      <div class="hero-ribbon-label">Fita roxa<br>Fibromialgia</div>
     </div>
   </div>
 </section>
