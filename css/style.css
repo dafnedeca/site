@@ -18,7 +18,7 @@
   --c-muted:    #6B4A8C;   /* texto secundário */
   --c-border:   #E5D5F5;   /* bordas */
   --c-white:    #FFFFFF;
-  --c-gold:     #C89614;   /* dourado dos posts */
+  --c-gold:     #9333EA;   /* roxo destaque (era dourado) */
 
   /* GRADIENTES */
   --g-primary:  linear-gradient(135deg, #5B21B6 0%, #7C3AED 100%);
