@@ -86,8 +86,21 @@ a { color: inherit; }
 
 /* ─── NAV ─── */
 .nav-mobile-cta { display: none; }
+/* ── TOPBAR ─────────────────────────────────────────────── */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 101;
+  background: #2D1065;
+  color: rgba(255,255,255,0.78);
+  font-size: 0.74rem; letter-spacing: 0.04em;
+  padding: 0.38rem 3rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.topbar a { color: #C084FC; text-decoration: none; transition: color 0.2s; }
+.topbar a:hover { color: #fff; }
+@media (max-width: 768px) { .topbar { display: none; } }
+
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: fixed; top: 34px; left: 0; right: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
   padding: 1rem 3rem;
   background: rgba(245, 238, 255, 0.92);
@@ -275,7 +288,7 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
 /* ─── RESPONSIVE — TABLET / MOBILE ─── */
 @media (max-width: 900px) {
   /* NAV — mantém position:fixed; dropdown é absolute relativo ao nav fixo */
-  nav { padding: 0.9rem 1.5rem; overflow: visible; }
+  nav { padding: 0.9rem 1.5rem; overflow: visible; top: 0; }
   .nav-logo { font-size: 0.95rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
   .nav-hamburger { display: flex; flex-shrink: 0; margin-left: 0.75rem; }
   .nav-cta { display: none; }
