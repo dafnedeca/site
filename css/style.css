@@ -28,8 +28,8 @@
   --g-hero:     linear-gradient(160deg, #0D0721 0%, #1A0A3B 50%, #1A1033 100%);
 
   /* TIPOGRAFIA */
-  --f-heading:  'Source Serif 4', Georgia, serif;
-  --f-body:     'Montserrat', system-ui, sans-serif;
+  --f-heading:  'Fraunces', Georgia, serif;
+  --f-body:     'Source Serif 4', Georgia, serif;
 
   /* ESPAÇAMENTO */
   --r-sm:  8px;
