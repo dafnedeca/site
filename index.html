@@ -238,7 +238,7 @@
     .hero-photo-wrap img {
       width: 100%; height: auto; display: block;
       object-fit: contain;
-      filter: drop-shadow(0 20px 40px rgba(91,33,182,0.20));
+      mix-blend-mode: multiply;
     }
     .hero-title-row {
       display: flex; align-items: center; gap: 2rem;
@@ -331,7 +331,7 @@
       transition: transform 0.25s, background 0.25s;
     }
     .esp-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.95); }
-    .esp-icon { width: 2rem; height: 2rem; margin-bottom: 1rem; display: block; color: var(--c-violet); }
+    .esp-icon { width: 2rem; height: 2rem; margin-bottom: 1rem; display: block; color: #9333EA; }
     .esp-title {
       font-family: var(--f-heading); font-weight: 700; font-size: 1rem;
       color: #2D1065; margin-bottom: 0.5rem;
@@ -519,7 +519,7 @@
     <div class="hero-photo">
       <div class="hero-photo-wrap">
         <img
-          src="assets/fotos/dafne-foto-profissional-roxa-sem-fundo.png"
+          src="assets/fotos/dafne-foto-profissional-roxa.jpg"
           alt="Dafne Oliveira Deça Campos, psicóloga CRP-12/31909"
           width="400" height="533"
           loading="eager"
@@ -561,7 +561,7 @@
 </section>
 
 <!-- ESPECIALIDADES -->
-<section class="section section-dark">
+<section class="section section-dark" style="background:#3D0F5E">
   <div class="section-inner">
     <span class="section-tag">Áreas de Atuação</span>
     <h2 class="section-title">Como posso te <em>ajudar</em></h2>
