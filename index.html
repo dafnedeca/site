@@ -210,18 +210,12 @@
     /* ─── HERO ─── */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(135deg, #F5EEFF 0%, #EDD9F7 60%, #F5E6FF 100%);
+      background: #F8F6F2;
       display: flex; align-items: center;
       padding: 8rem 3rem 5rem;
       position: relative; overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute; top: -200px; right: -200px;
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(200,150,220,0.2) 0%, transparent 65%);
-      pointer-events: none;
-    }
+    .hero::before { display: none; }
     .hero-inner {
       max-width: 1280px; margin: 0 auto; width: 100%;
       position: relative; z-index: 1;
@@ -237,8 +231,9 @@
     }
     .hero-photo-wrap img {
       width: 100%; height: auto; display: block;
-      object-fit: contain;
-      mix-blend-mode: multiply;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(45,16,101,0.12);
     }
     .hero-title-row {
       display: flex; align-items: center; gap: 2rem;
@@ -280,9 +275,7 @@
     .hero-stat {}
     .hero-stat-num {
       font-family: var(--f-heading); font-weight: 800; font-size: 2rem;
-      background: linear-gradient(135deg, #6D28D9 0%, #9B4DCA 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text; display: block; line-height: 1.1;
+      color: #5B21B6; display: block; line-height: 1.1;
     }
     .hero-stat-label { font-size: 0.85rem; color: #6B4A8C; margin-top: 0.2rem; }
     .hero-sub {
