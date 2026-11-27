@@ -11,12 +11,12 @@
   --c-amber:    #F59E0B;   /* energia, atenção, destaque */
 
   /* CORES NEUTRAS */
-  --c-dark:     #1A1033;   /* fundo escuro */
-  --c-bg:       #F8F6F2;   /* branco gelo — papel */
-  --c-surface:  #EDE9FF;   /* lilás suave para cards */
-  --c-text:     #2D1065;   /* texto principal roxo escuro */
-  --c-muted:    #6B4A8C;   /* texto secundário */
-  --c-border:   #E5D5F5;   /* bordas */
+  --c-dark:     #160A2E;   /* fundo escuro — roxo-preto profundo */
+  --c-bg:       #F7F5F9;   /* branco quente levemente lilás */
+  --c-surface:  #EDE9FF;   /* lilás suave para cards / hero */
+  --c-text:     #1A0F33;   /* texto principal — quase-preto roxo */
+  --c-muted:    #5C4080;   /* texto secundário */
+  --c-border:   #E2D8F5;   /* bordas */
   --c-white:    #FFFFFF;
   --c-gold:     #9333EA;   /* roxo destaque (era dourado) */
 
@@ -28,8 +28,8 @@
   --g-hero:     linear-gradient(160deg, #0D0721 0%, #1A0A3B 50%, #1A1033 100%);
 
   /* TIPOGRAFIA */
-  --f-heading:  'Fraunces', Georgia, serif;
-  --f-body:     'Source Serif 4', Georgia, serif;
+  --f-heading:  'Cormorant Garamond', Georgia, serif;
+  --f-body:     'Nunito Sans', system-ui, sans-serif;
 
   /* ESPAÇAMENTO */
   --r-sm:  8px;
@@ -170,8 +170,8 @@ nav {
   display: inline-block; width: 18px; height: 2px;
   background: var(--c-gold); border-radius: 2px; flex-shrink: 0;
 }
-.section-dark .section-tag { color: #E5B830; }
-.section-dark .section-tag::before { background: #E5B830; }
+.section-dark .section-tag { color: #C4B5FD; }
+.section-dark .section-tag::before { background: #C4B5FD; }
 .section-title {
   font-family: var(--f-heading); font-weight: 300;
   font-size: clamp(1.9rem, 3.5vw, 2.8rem);
