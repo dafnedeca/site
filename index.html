@@ -467,54 +467,67 @@
         Psicoterapia para quem vive com dor e busca <em>novas possibilidades de viver.</em>
       </h1>
       <div class="hero-ribbon-wrap">
-      <svg viewBox="0 0 100 175" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Fita roxa da fibromialgia">
+      <svg viewBox="0 0 100 158" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Fita roxa da fibromialgia">
         <defs>
-          <linearGradient id="rg" x1="30%" y1="0%" x2="70%" y2="100%">
-            <stop offset="0%" stop-color="#A855F7"/>
-            <stop offset="100%" stop-color="#7C3AED"/>
-          </linearGradient>
-          <linearGradient id="rgd" x1="0%" y1="0%" x2="100%" y2="100%">
+          <!-- Tira de trás: roxo escuro -->
+          <linearGradient id="rb" x1="80%" y1="0%" x2="20%" y2="100%">
             <stop offset="0%" stop-color="#7C3AED"/>
             <stop offset="100%" stop-color="#5B21B6"/>
           </linearGradient>
-          <filter id="rs" x="-20%" y="-10%" width="140%" height="130%">
-            <feDropShadow dx="1" dy="3" stdDeviation="5" flood-color="rgba(76,29,149,0.4)"/>
+          <!-- Tira da frente: roxo claro → médio -->
+          <linearGradient id="rf" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#C084FC"/>
+            <stop offset="45%" stop-color="#A855F7"/>
+            <stop offset="100%" stop-color="#7C3AED"/>
+          </linearGradient>
+          <!-- Realce acetinado (branco → transparente) -->
+          <linearGradient id="rh" x1="0%" y1="30%" x2="60%" y2="70%">
+            <stop offset="0%" stop-color="white" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="white" stop-opacity="0"/>
+          </linearGradient>
+          <filter id="rs" x="-15%" y="-5%" width="130%" height="120%">
+            <feDropShadow dx="1" dy="2" stdDeviation="4" flood-color="rgba(76,29,149,0.45)"/>
           </filter>
         </defs>
 
-        <!-- Pétala esquerda (camada de baixo, mais escura) + cauda esquerda -->
-        <path fill="url(#rgd)" d="M50,105 C30,100 8,82 8,55 C8,28 26,8 50,8 C38,8 24,26 24,55 C24,78 38,98 50,105 Z"/>
-        <path fill="url(#rgd)" d="M50,105 C38,116 22,142 16,168 L34,174 C40,150 50,124 58,112 Z"/>
+        <!--
+          Geometria: duas tiras se cruzando em X no meio.
+          Tira A (atrás, escura):  arco direito do loop → cauda esquerda
+          Tira B (frente, clara):  arco esquerdo + arco superior (dobra) → cauda direita
+          Buraco triangular aparece naturalmente no centro do loop.
+        -->
 
-        <!-- Pétala direita (frente) + cauda direita -->
-        <path filter="url(#rs)" fill="url(#rg)" d="M50,105 C70,100 92,82 92,55 C92,28 74,8 50,8 C62,8 76,26 76,55 C76,78 62,98 50,105 Z"/>
-        <path fill="url(#rg)" d="M42,112 C50,124 60,150 66,174 L84,168 C78,142 62,116 50,105 Z"/>
+        <!-- Tira A — arco direito do loop + cauda esquerda (atrás) -->
+        <path fill="url(#rb)" d="
+          M76,14 C90,28 90,55 64,70
+          L15,152 L20,145 L28,152
+          L46,74 C65,52 70,28 70,20
+          C72,12 74,12 76,14 Z
+        "/>
 
-        <!-- Sombra no cruzamento das caudas -->
-        <path fill="#3B0764" opacity="0.45" d="M34,103 C40,99 60,99 66,103 C64,110 57,114 50,112 C43,114 36,110 34,103 Z"/>
+        <!-- Tira B — arco esquerdo + dobra superior + cauda direita (frente) -->
+        <path filter="url(#rs)" fill="url(#rf)" d="
+          M24,14 C10,28 10,56 36,70
+          L85,152 L80,145 L72,152
+          L54,74 C36,54 30,28 30,20
+          C30,10 70,10 70,20
+          C72,12 74,12 76,14
+          C76,2 24,2 24,14 Z
+        "/>
 
-        <!-- Costura — borda exterior esq -->
-        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.45" fill="none"
-              d="M50,8 C26,8 8,28 8,55 C8,82 30,100 50,105"/>
-        <!-- Costura — borda exterior dir -->
-        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.45" fill="none"
-              d="M50,8 C74,8 92,28 92,55 C92,82 70,100 50,105"/>
-        <!-- Costura — borda interior esq (aresta do buraco) -->
-        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.35" fill="none"
-              d="M50,8 C38,8 24,26 24,55 C24,78 38,98 50,105"/>
-        <!-- Costura — borda interior dir -->
-        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.35" fill="none"
-              d="M50,8 C62,8 76,26 76,55 C76,78 62,98 50,105"/>
-        <!-- Costura — cauda esquerda -->
-        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.4" fill="none"
-              d="M50,105 C38,116 22,142 16,168"/>
-        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.4" fill="none"
-              d="M58,112 C54,124 40,150 34,174"/>
-        <!-- Costura — cauda direita -->
-        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.4" fill="none"
-              d="M50,105 C62,116 78,142 84,168"/>
-        <path stroke="white" stroke-width="1.2" stroke-dasharray="4,3.5" opacity="0.4" fill="none"
-              d="M42,112 C46,124 60,150 66,174"/>
+        <!-- Realce acetinado no arco esquerdo e dobra -->
+        <path fill="url(#rh)" opacity="0.55" d="
+          M24,14 C10,28 10,56 36,70
+          L42,66 C22,52 20,26 24,14 Z
+        "/>
+
+        <!-- Sombra no ponto de cruzamento -->
+        <path fill="#3B0764" opacity="0.3" d="
+          M46,68 C50,64 58,64 64,70
+          C62,78 56,82 50,80
+          C44,82 38,76 36,70
+          C42,64 46,68 Z
+        "/>
       </svg>
       </div><!-- /hero-ribbon-wrap -->
     </div><!-- /hero-title-row -->
