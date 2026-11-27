@@ -5,15 +5,15 @@
    ═══════════════════════════════════════════════════════════ */
 :root {
   /* CORES PRINCIPAIS */
-  --c-violet:   #6D28D9;   /* autoridade, profundidade, ciência */
+  --c-violet:   #5B21B6;   /* roxo fibromialgia */
   --c-pink:     #EC4899;   /* calor, conexão, humanidade */
   --c-emerald:  #059669;   /* saúde, crescimento, esperança */
   --c-amber:    #F59E0B;   /* energia, atenção, destaque */
 
   /* CORES NEUTRAS */
   --c-dark:     #1A1033;   /* fundo escuro */
-  --c-bg:       #FAF7FF;   /* fundo lavanda quase branco */
-  --c-surface:  #EDE6FF;   /* superfície de cards lavanda suave */
+  --c-bg:       #F8F6F2;   /* branco gelo — papel */
+  --c-surface:  #EDE9FF;   /* lilás suave para cards */
   --c-text:     #2D1065;   /* texto principal roxo escuro */
   --c-muted:    #6B4A8C;   /* texto secundário */
   --c-border:   #E5D5F5;   /* bordas */
@@ -21,7 +21,7 @@
   --c-gold:     #C89614;   /* dourado dos posts */
 
   /* GRADIENTES */
-  --g-primary:  linear-gradient(135deg, #6D28D9 0%, #9333EA 100%);
+  --g-primary:  linear-gradient(135deg, #5B21B6 0%, #7C3AED 100%);
   --g-warm:     linear-gradient(135deg, #EC4899 0%, #F59E0B 100%);
   --g-cool:     linear-gradient(135deg, #6D28D9 0%, #EC4899 100%);
   --g-dark:     linear-gradient(160deg, #1A1033 0%, #0D0721 100%);
@@ -48,7 +48,8 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--f-body);
-  background: var(--c-bg);
+  background-color: var(--c-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.038'/%3E%3C/svg%3E");
   color: var(--c-text);
   line-height: 1.7;
   overflow-x: hidden;
