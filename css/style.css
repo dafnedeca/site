@@ -89,20 +89,21 @@ a { color: inherit; }
 /* ── TOPBAR ─────────────────────────────────────────────── */
 .topbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 101;
-  background: #2D1065;
-  color: rgba(255,255,255,0.78);
-  font-size: 0.74rem; letter-spacing: 0.04em;
-  padding: 0.38rem 3rem;
+  background: var(--c-bg);
+  color: var(--c-muted);
+  font-size: 0.72rem; letter-spacing: 0.05em;
+  padding: 0.3rem 3rem;
   display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid var(--c-border);
 }
-.topbar a { color: #C084FC; text-decoration: none; transition: color 0.2s; }
-.topbar a:hover { color: #fff; }
+.topbar a { color: var(--c-gold); text-decoration: none; transition: color 0.2s; font-weight: 600; }
+.topbar a:hover { color: var(--c-text); }
 @media (max-width: 768px) { .topbar { display: none; } }
 
 nav {
-  position: fixed; top: 34px; left: 0; right: 0; z-index: 100;
+  position: fixed; top: 30px; left: 0; right: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
-  padding: 1rem 3rem;
+  padding: 0.65rem 3rem;
   background: #3B0764;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }

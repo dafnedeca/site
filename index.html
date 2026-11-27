@@ -230,18 +230,15 @@
       display: flex; align-items: center; gap: 2rem;
       margin-bottom: 0;
     }
-    .hero-title-row h1 { flex: 1; min-width: 0; margin-bottom: 1.5rem; }
-    .hero-ribbon-wrap {
-      flex-shrink: 0; width: 110px; align-self: center;
-    }
+    .hero-title-row h1 { margin-bottom: 1.5rem; }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 0.6rem;
-      background: var(--c-gold); border: none;
-      color: #1A1033; font-size: 0.78rem; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 0.45rem 1.1rem; border-radius: 99px; margin-bottom: 2rem;
+      background: transparent; border: 1.5px solid var(--c-gold);
+      color: var(--c-gold); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.38rem 1rem; border-radius: 99px; margin-bottom: 2rem;
     }
-    .hero-eyebrow::before { content:''; width:6px; height:6px; background:#1A1033; border-radius:50%; opacity:0.5; }
+    .hero-eyebrow::before { content:''; width:5px; height:5px; background:var(--c-gold); border-radius:50%; }
     .hero h1 {
       font-family: var(--f-heading); font-weight: 300;
       font-size: clamp(2.6rem, 5.5vw, 4.5rem);
@@ -467,75 +464,11 @@
   <div class="hero-inner">
     <div class="hero-eyebrow">Psicóloga · CRP-12/31909 · Atendimento Online</div>
 
-    <!-- Frase principal + fita ao lado -->
+    <!-- Frase principal -->
     <div class="hero-title-row">
       <h1>
         Psicoterapia para quem vive com dor e busca <em>novas possibilidades de viver.</em>
       </h1>
-      <div class="hero-ribbon-wrap">
-      <svg viewBox="0 0 100 158" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Fita roxa da fibromialgia">
-        <defs>
-          <!-- Tira de trás: roxo escuro -->
-          <linearGradient id="rb" x1="80%" y1="0%" x2="20%" y2="100%">
-            <stop offset="0%" stop-color="#7C3AED"/>
-            <stop offset="100%" stop-color="#5B21B6"/>
-          </linearGradient>
-          <!-- Tira da frente: roxo claro → médio -->
-          <linearGradient id="rf" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#C084FC"/>
-            <stop offset="45%" stop-color="#A855F7"/>
-            <stop offset="100%" stop-color="#7C3AED"/>
-          </linearGradient>
-          <!-- Realce acetinado (branco → transparente) -->
-          <linearGradient id="rh" x1="0%" y1="30%" x2="60%" y2="70%">
-            <stop offset="0%" stop-color="white" stop-opacity="0.35"/>
-            <stop offset="100%" stop-color="white" stop-opacity="0"/>
-          </linearGradient>
-          <filter id="rs" x="-15%" y="-5%" width="130%" height="120%">
-            <feDropShadow dx="1" dy="2" stdDeviation="4" flood-color="rgba(76,29,149,0.45)"/>
-          </filter>
-        </defs>
-
-        <!--
-          Geometria: duas tiras se cruzando em X no meio.
-          Tira A (atrás, escura):  arco direito do loop → cauda esquerda
-          Tira B (frente, clara):  arco esquerdo + arco superior (dobra) → cauda direita
-          Buraco triangular aparece naturalmente no centro do loop.
-        -->
-
-        <!-- Tira A — arco direito do loop + cauda esquerda (atrás) -->
-        <path fill="url(#rb)" d="
-          M76,14 C90,28 90,55 64,70
-          L15,152 L20,145 L28,152
-          L46,74 C65,52 70,28 70,20
-          C72,12 74,12 76,14 Z
-        "/>
-
-        <!-- Tira B — arco esquerdo + dobra superior + cauda direita (frente) -->
-        <path filter="url(#rs)" fill="url(#rf)" d="
-          M24,14 C10,28 10,56 36,70
-          L85,152 L80,145 L72,152
-          L54,74 C36,54 30,28 30,20
-          C30,10 70,10 70,20
-          C72,12 74,12 76,14
-          C76,2 24,2 24,14 Z
-        "/>
-
-        <!-- Realce acetinado no arco esquerdo e dobra -->
-        <path fill="url(#rh)" opacity="0.55" d="
-          M24,14 C10,28 10,56 36,70
-          L42,66 C22,52 20,26 24,14 Z
-        "/>
-
-        <!-- Sombra no ponto de cruzamento -->
-        <path fill="#3B0764" opacity="0.3" d="
-          M46,68 C50,64 58,64 64,70
-          C62,78 56,82 50,80
-          C44,82 38,76 36,70
-          C42,64 46,68 Z
-        "/>
-      </svg>
-      </div><!-- /hero-ribbon-wrap -->
     </div><!-- /hero-title-row -->
 
     <p class="hero-sub">
