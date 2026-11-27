@@ -225,28 +225,20 @@
     .hero-inner {
       max-width: 1280px; margin: 0 auto; width: 100%;
       position: relative; z-index: 1;
-      display: flex; align-items: center; gap: 5rem;
+      display: flex; align-items: flex-start; gap: 3rem;
     }
     .hero-content { flex: 1 1 55%; min-width: 0; }
     .hero-photo {
-      flex: 0 0 360px; max-width: 360px;
+      flex: 0 0 400px; max-width: 400px;
       position: relative;
-    }
-    .hero-photo::before {
-      content: '';
-      position: absolute; top: -30px; left: -30px; right: -30px; bottom: -30px;
-      background: radial-gradient(circle at 50% 50%, rgba(147,51,234,0.18) 0%, transparent 68%);
-      pointer-events: none; z-index: 0;
     }
     .hero-photo-wrap {
       position: relative; z-index: 1;
-      border-radius: 28px; overflow: hidden;
-      box-shadow: 0 24px 64px rgba(91,33,182,0.28), 0 4px 16px rgba(91,33,182,0.14);
-      border: 2px solid rgba(200,150,20,0.25);
     }
     .hero-photo-wrap img {
       width: 100%; height: auto; display: block;
-      object-fit: cover; object-position: top center;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 40px rgba(91,33,182,0.20));
     }
     .hero-title-row {
       display: flex; align-items: center; gap: 2rem;
@@ -527,9 +519,9 @@
     <div class="hero-photo">
       <div class="hero-photo-wrap">
         <img
-          src="assets/fotos/dafne-foto-profissional-roxa.jpg"
+          src="assets/fotos/dafne-foto-profissional-roxa-sem-fundo.png"
           alt="Dafne Oliveira Deça Campos, psicóloga CRP-12/31909"
-          width="360" height="480"
+          width="400" height="533"
           loading="eager"
         >
       </div>
