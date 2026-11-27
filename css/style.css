@@ -90,18 +90,18 @@ a { color: inherit; }
 .topbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 101;
   background: var(--c-bg);
-  color: var(--c-muted);
-  font-size: 0.72rem; letter-spacing: 0.05em;
-  padding: 0.3rem 3rem;
+  color: var(--c-text);
+  font-size: 0.82rem; letter-spacing: 0.03em;
+  padding: 0.4rem 3rem;
   display: flex; justify-content: space-between; align-items: center;
   border-bottom: 1px solid var(--c-border);
 }
-.topbar a { color: var(--c-gold); text-decoration: none; transition: color 0.2s; font-weight: 600; }
-.topbar a:hover { color: var(--c-text); }
+.topbar a { color: #3B0764; text-decoration: none; transition: color 0.2s; font-weight: 700; }
+.topbar a:hover { color: var(--c-violet); }
 @media (max-width: 900px) { .topbar { display: none; } }
 
 nav {
-  position: fixed; top: 30px; left: 0; right: 0; z-index: 100;
+  position: fixed; top: 33px; left: 0; right: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
   padding: 0.65rem 3rem;
   background: #3B0764;
