@@ -23,7 +23,7 @@
   /* GRADIENTES */
   --g-primary:  linear-gradient(135deg, #5B21B6 0%, #7C3AED 100%);
   --g-warm:     linear-gradient(135deg, #EC4899 0%, #F59E0B 100%);
-  --g-cool:     linear-gradient(135deg, #6D28D9 0%, #C4B5FD 100%);
+  --g-cool:     linear-gradient(135deg, #5B21B6 0%, #9333EA 100%);
   --g-dark:     linear-gradient(160deg, #1A1033 0%, #0D0721 100%);
   --g-hero:     linear-gradient(160deg, #0D0721 0%, #1A0A3B 50%, #1A1033 100%);
 
