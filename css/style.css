@@ -179,6 +179,11 @@ nav {
   color: var(--c-dark); margin-bottom: 1rem;
 }
 .section-dark .section-title { color: var(--c-white); }
+.section-dark .section-title em {
+  background: linear-gradient(135deg, #E9D5FF 0%, #C4B5FD 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 .section-title em {
   font-style: normal;
   background: var(--g-cool);
